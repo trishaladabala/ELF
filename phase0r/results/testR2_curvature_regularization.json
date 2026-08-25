@@ -1,0 +1,28 @@
+{
+  "control": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.901647130027413,
+    "sde_log_ppl": 8.908775502815843,
+    "sde_penalty": 0.00712837278842926,
+    "sde_penalty_ci": [
+      -0.1094535549171269,
+      0.13081688210368148
+    ],
+    "curvature_correlation": -0.012822771610739086,
+    "avg_ode_curvature": 0.002778146881610155
+  },
+  "regularized": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.8997408375144,
+    "sde_log_ppl": 8.929130960255861,
+    "sde_penalty": 0.0293901227414608,
+    "sde_penalty_ci": [
+      -0.09410410718992353,
+      0.1563516660127789
+    ],
+    "curvature_correlation": 0.022223838075493423,
+    "avg_ode_curvature": 0.002776576206088066
+  }
+}

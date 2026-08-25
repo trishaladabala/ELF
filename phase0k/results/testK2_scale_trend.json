@@ -1,0 +1,49 @@
+{
+  "scales": [
+    {
+      "scale": "275K",
+      "params": 275476,
+      "ode_deg_rate": 0.19921875,
+      "sde_deg_rate": 0.0,
+      "entropy_corr_all": {
+        "r": 0.3835689818406428,
+        "p": 1.0804247539318618e-143
+      },
+      "entropy_corr_excl": {
+        "r": 0.26932393763643586,
+        "p": 1.295708501104218e-55
+      }
+    },
+    {
+      "scale": "1M",
+      "params": 792912,
+      "ode_deg_rate": 0.0625,
+      "sde_deg_rate": 0.0,
+      "entropy_corr_all": {
+        "r": 0.16872858964943302,
+        "p": 1.5437801840987668e-27
+      },
+      "entropy_corr_excl": {
+        "r": 0.13288413164836507,
+        "p": 1.3560939865101956e-16
+      }
+    },
+    {
+      "scale": "5M",
+      "params": 3572476,
+      "ode_deg_rate": 0.0,
+      "sde_deg_rate": 0.0,
+      "entropy_corr_all": {
+        "r": -0.08468098418748285,
+        "p": 5.7091358035254444e-08
+      },
+      "entropy_corr_excl": {
+        "r": -0.08468098418748285,
+        "p": 5.7091358035254444e-08
+      }
+    }
+  ],
+  "direction_consistent_all": false,
+  "direction_consistent_excl": false,
+  "magnitude_trend": "weakening"
+}

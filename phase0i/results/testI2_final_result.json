@@ -1,0 +1,39 @@
+{
+  "descriptive": {
+    "4_steps": {
+      "ode_ppl_mean": 28373.991649523567,
+      "sde_ppl_mean": 8352.047044104847,
+      "diff_mean": 20021.94460541872,
+      "diff_ci_lo": 17727.615821346877,
+      "diff_ci_hi": 22514.96625362271,
+      "excludes_zero": true
+    },
+    "16_steps": {
+      "ode_ppl_mean": 13632.083339768444,
+      "sde_ppl_mean": 8957.579009658513,
+      "diff_mean": 4674.504330109931,
+      "diff_ci_lo": 2397.9579415821227,
+      "diff_ci_hi": 6870.0639811369165,
+      "excludes_zero": true
+    },
+    "32_steps": {
+      "ode_ppl_mean": 14468.575928244996,
+      "sde_ppl_mean": 8161.9146803936665,
+      "diff_mean": 6306.661247851331,
+      "diff_ci_lo": 2005.9548651508244,
+      "diff_ci_hi": 13029.79145242125,
+      "excludes_zero": true
+    }
+  },
+  "confirmatory": {
+    "8_steps": {
+      "ode_ppl_mean": 24913.164964213072,
+      "sde_ppl_mean": 8718.768708772477,
+      "diff_mean": 16194.396255440599,
+      "diff_ci_lo": 7673.124298017223,
+      "diff_ci_hi": 30762.05918246458,
+      "excludes_zero": true
+    }
+  },
+  "verdict": "CONFIRMED_GO"
+}

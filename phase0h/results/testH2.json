@@ -1,0 +1,37 @@
+{
+  "substitution": {
+    "error_type": "substitution",
+    "n_errors": 256,
+    "mean_entropy_at_errors": 1.6801530122756958,
+    "mean_entropy_at_clean": 0.9593228697776794,
+    "entropy_separation": 0.7208301424980164,
+    "best_detector": {
+      "threshold": 1.6273276567459107,
+      "tp": 133,
+      "fp": 359,
+      "fn": 123,
+      "precision": 0.2703252032520325,
+      "recall": 0.51953125,
+      "f1": 0.3556149732620321
+    }
+  },
+  "repetition": {
+    "error_type": "repetition",
+    "n_errors": 255,
+    "mean_entropy_at_errors": 1.2376503944396973,
+    "mean_entropy_at_clean": 0.9006502032279968,
+    "entropy_separation": 0.33700019121170044,
+    "best_detector": {
+      "threshold": 0.8113257884979248,
+      "tp": 171,
+      "fp": 902,
+      "fn": 72,
+      "precision": 0.15936626281453867,
+      "recall": 0.7037037037037037,
+      "f1": 0.25987841945288753
+    }
+  },
+  "sub_detectable": true,
+  "rep_detectable": true,
+  "verdict": "PASS"
+}

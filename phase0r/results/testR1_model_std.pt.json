@@ -1,0 +1,14 @@
+{
+  "num_steps": 15000,
+  "model_params": 275476,
+  "training_time_s": 197.99405026435852,
+  "final_l2": 0.7232915742397308,
+  "final_ce": 1.774970273733139,
+  "random_baseline": 6.931471805599453,
+  "target_ce": 5.545177444479563,
+  "ce_reduction_pct": 74.39259188359874,
+  "ce_passes": true,
+  "meaningful_learning": true,
+  "vocab_size": 1024,
+  "n_sequences": 6000
+}

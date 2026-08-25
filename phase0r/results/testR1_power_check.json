@@ -1,0 +1,28 @@
+{
+  "standard": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 9.026528031254808,
+    "sde_log_ppl": 8.983941299219927,
+    "sde_penalty": -0.04258673203488191,
+    "sde_penalty_ci": [
+      -0.11704026057074468,
+      0.0230652157993366
+    ],
+    "curvature_correlation": -0.016546113085546103,
+    "avg_ode_curvature": 0.0028378721326589584
+  },
+  "oversampled": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 9.259998477995396,
+    "sde_log_ppl": 9.27331263323625,
+    "sde_penalty": 0.013314155240853628,
+    "sde_penalty_ci": [
+      -0.054722980099419755,
+      0.08877073181793092
+    ],
+    "curvature_correlation": 0.006752958947542829,
+    "avg_ode_curvature": 0.0022884616628289223
+  }
+}

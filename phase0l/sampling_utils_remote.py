@@ -43,17 +43,6 @@ def sample_timesteps(
     if time_schedule == 'logit_normal':
         z = torch.randn((batch_size,), dtype=dtype, device=device) * P_std + P_mean
         return torch.sigmoid(z)
-    if time_schedule == 'logit_normal_oversampled':
-        # 50% logit_normal, 50% uniform(0.9, 1.0)
-        n_standard = batch_size // 2
-        n_boundary = batch_size - n_standard
-        z = torch.randn((n_standard,), dtype=dtype, device=device) * P_std + P_mean
-        t_standard = torch.sigmoid(z)
-        t_boundary = torch.rand((n_boundary,), dtype=dtype, device=device) * 0.1 + 0.9
-        t = torch.cat([t_standard, t_boundary], dim=0)
-        # Shuffle
-        perm = torch.randperm(batch_size, device=device)
-        return t[perm]
     if time_schedule == 'uniform':
         return torch.rand((batch_size,), dtype=dtype, device=device)
     raise ValueError(f"Unknown time_schedule: {time_schedule}")
@@ -71,7 +60,7 @@ def get_sampling_steps(
     """
     if time_schedule == "uniform":
         return torch.linspace(0.0, 1.0, n_steps + 1, dtype=dtype, device=device)
-    if time_schedule in ["logit_normal", "logit_normal_oversampled"]:
+    if time_schedule == "logit_normal":
         steps = sample_timesteps(
             batch_size=n_steps - 1,
             P_mean=P_mean, P_std=P_std, time_schedule=time_schedule,
@@ -248,7 +237,10 @@ def _sde_step(
     h = float(t_next - t)
     alpha = max(0.0, min(1.0, 1.0 - gamma * h))
     t_back = alpha * float(t)
-    eps = torch.randn(z.shape, generator=generator, dtype=z.dtype, device=z.device) * config.denoiser_noise_scale
+    if z.is_cuda:
+        eps = torch.randn(z.shape, dtype=z.dtype, device=z.device) * config.denoiser_noise_scale
+    else:
+        eps = torch.randn(z.shape, generator=generator, dtype=z.dtype) * config.denoiser_noise_scale
     z_back = restore_cond(alpha * z + (1.0 - alpha) * eps, cond_seq, cond_seq_mask)
     t_batch = torch.full((z.shape[0],), t_back, dtype=z.dtype, device=z.device)
     v_pred, x_pred = _forward_sample(

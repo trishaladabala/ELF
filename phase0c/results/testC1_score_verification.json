@@ -1,0 +1,74 @@
+{
+  "gmm": {
+    "K": 3,
+    "D": 8,
+    "sigma": 1.0
+  },
+  "fd_validation_pass": true,
+  "fd_errors": [
+    {
+      "t": 0.1,
+      "mean_err": 9.809271001807313e-11,
+      "max_err": 2.6211954828880835e-10
+    },
+    {
+      "t": 0.3,
+      "mean_err": 8.512482992800718e-11,
+      "max_err": 1.3743439719604567e-10
+    },
+    {
+      "t": 0.5,
+      "mean_err": 1.0066189496532596e-10,
+      "max_err": 1.7983387001763163e-10
+    },
+    {
+      "t": 0.7,
+      "mean_err": 1.3311476643185217e-10,
+      "max_err": 3.209001953052848e-10
+    },
+    {
+      "t": 0.9,
+      "mean_err": 1.2400986956068172e-10,
+      "max_err": 1.747326727752352e-10
+    }
+  ],
+  "score_comparison": {
+    "0.1": {
+      "original_mean_err": 1.3460214491507998,
+      "original_max_err": 1.8603158458905071,
+      "corrected_mean_err": 1.386756832601103e-15,
+      "corrected_max_err": 3.3259530696594272e-15,
+      "ratio": 970625431587817.0
+    },
+    "0.3": {
+      "original_mean_err": 3.424518317493345,
+      "original_max_err": 6.7208310647472755,
+      "corrected_mean_err": 1.6191973913785871e-15,
+      "corrected_max_err": 6.151727646379628e-15,
+      "ratio": 2114948020375517.5
+    },
+    "0.5": {
+      "original_mean_err": 6.359502708593962,
+      "original_max_err": 12.137158405737754,
+      "corrected_mean_err": 4.160720556370463e-15,
+      "corrected_max_err": 1.0901971781656065e-14,
+      "ratio": 1528461866744920.5
+    },
+    "0.7": {
+      "original_mean_err": 13.191043276290982,
+      "original_max_err": 19.726548171942255,
+      "corrected_mean_err": 1.654087952392206e-14,
+      "corrected_max_err": 4.1237395821275646e-14,
+      "ratio": 797481370758645.9
+    },
+    "0.9": {
+      "original_mean_err": 41.26547082175236,
+      "original_max_err": 74.58400245546143,
+      "corrected_mean_err": 1.9238177703658102e-13,
+      "corrected_max_err": 8.058104041150499e-13,
+      "ratio": 214497815008257.3
+    }
+  },
+  "corrected_pass": true,
+  "original_wrong": true
+}

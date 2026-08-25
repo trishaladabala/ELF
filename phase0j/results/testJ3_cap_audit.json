@@ -1,0 +1,15 @@
+{
+  "all_tokens": {
+    "spearman_r": 0.3975581014441219,
+    "spearman_p": 2.4425504450987644e-308
+  },
+  "exclude_capped": {
+    "spearman_r": 0.34805819384197717,
+    "spearman_p": 3.7434343646728955e-195
+  },
+  "winsorize_capped": {
+    "spearman_r": 0.4286257973483756,
+    "spearman_p": 0.0
+  },
+  "verdict": "The strong positive correlation (higher curvature -> greater SDE overconfidence) survives exclusion of degenerate sequences. The mechanism holds generally, not just for catastrophic collapses."
+}

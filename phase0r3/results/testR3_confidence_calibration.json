@@ -1,0 +1,35 @@
+{
+  "control": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.886745436737934,
+    "sde_log_ppl": 8.854937187706431,
+    "sde_penalty": -0.031808249031504,
+    "sde_penalty_ci": [
+      -0.10254933758017917,
+      0.041670417552813886
+    ]
+  },
+  "label_smooth": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.681226581335068,
+    "sde_log_ppl": 8.660851119707027,
+    "sde_penalty": -0.020375461628039677,
+    "sde_penalty_ci": [
+      -0.08698584988402823,
+      0.05134219656077524
+    ]
+  },
+  "entropy_reg": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.884773718814055,
+    "sde_log_ppl": 8.87299045175314,
+    "sde_penalty": -0.011783267060915628,
+    "sde_penalty_ci": [
+      -0.08133807966175179,
+      0.05769196972250938
+    ]
+  }
+}

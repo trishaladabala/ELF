@@ -1,0 +1,40 @@
+{
+  "gamma0_equivalence_passes": true,
+  "gamma_results": {
+    "0.0": {
+      "z_norm": 65.2312240600586,
+      "mean_unique_tokens": 2.25,
+      "sample_diversity": 32.46583938598633
+    },
+    "0.1": {
+      "z_norm": 60.669410705566406,
+      "mean_unique_tokens": 1.625,
+      "sample_diversity": 30.200334548950195
+    },
+    "0.5": {
+      "z_norm": 43.9556770324707,
+      "mean_unique_tokens": 1.0,
+      "sample_diversity": 21.896060943603516
+    },
+    "1.0": {
+      "z_norm": 28.3475399017334,
+      "mean_unique_tokens": 1.0,
+      "sample_diversity": 13.827607154846191
+    },
+    "2.0": {
+      "z_norm": 23.719619750976562,
+      "mean_unique_tokens": 1.0,
+      "sample_diversity": 10.499371528625488
+    }
+  },
+  "schedule_results": {
+    "uniform": {
+      "z_norm": 65.2312240600586,
+      "mean_unique_tokens": 2.25
+    },
+    "logit_normal": {
+      "z_norm": 52.08431625366211,
+      "mean_unique_tokens": 1.125
+    }
+  }
+}

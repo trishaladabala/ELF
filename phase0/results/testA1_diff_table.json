@@ -1,0 +1,94 @@
+{
+  "diff_table": [
+    {
+      "parameter": "Sample size (n)",
+      "test_02": "1500 (N_SUBSAMPLE=1500)",
+      "test_06": "1000 (N_SAMPLE=1000)",
+      "impact": "MODERATE \u2014 smaller n in T6 means OT has fewer points to optimize over, potentially amplifying coupling gains"
+    },
+    {
+      "parameter": "Sinkhorn \u03b5 (regularization)",
+      "test_02": "0.05",
+      "test_06": "0.05",
+      "impact": "SAME \u2014 not a source of discrepancy"
+    },
+    {
+      "parameter": "Sinkhorn max iterations",
+      "test_02": "2000",
+      "test_06": "2000",
+      "impact": "SAME"
+    },
+    {
+      "parameter": "Sinkhorn stop threshold",
+      "test_02": "1e-9",
+      "test_06": "1e-9",
+      "impact": "SAME"
+    },
+    {
+      "parameter": "Cost matrix normalization",
+      "test_02": "C / C.max() \u2014 normalized to [0,1] range",
+      "test_06": "C / (C.max() + 1e-10) \u2014 same normalization (epsilon for safety)",
+      "impact": "SAME effectively"
+    },
+    {
+      "parameter": "Cost metric",
+      "test_02": "ot.dist(x, eps, metric='sqeuclidean')",
+      "test_06": "ot.dist(x, eps, metric='sqeuclidean')",
+      "impact": "SAME"
+    },
+    {
+      "parameter": "OT cost computation",
+      "test_02": "np.sum(T * C_raw) where C_raw is raw sqeuclidean \u2014 total transport cost",
+      "test_06": "np.sum(T * C) where C is the NORMALIZED cost \u2014 different scale!",
+      "impact": "\u26a0\ufe0f CRITICAL DIFFERENCE: T6 computes OT cost on normalized C, T2 computes on raw C_raw. But T6's 'reduction' uses avg_path_sq from argmax, not ot_cost \u2014 so this doesn't directly affect the reduction %."
+    },
+    {
+      "parameter": "Reduction metric",
+      "test_02": "ot_cost / random_cost_mean \u2014 uses sum(T * C_raw) / MC_mean",
+      "test_06": "1 - avg_path_sq / random_cost \u2014 uses ARGMAX assignment path length",
+      "impact": "\u26a0\ufe0f\u26a0\ufe0f CRITICAL DIFFERENCE #1: Test 2 uses the soft OT plan cost (probabilistic coupling). Test 6 uses hard argmax assignment from the plan. The argmax assignment tends to give MUCH better per-pair distances than the soft plan cost, which is spread across many pairs. This alone can easily explain a 5-10x difference."
+    },
+    {
+      "parameter": "Noise generation (\u03b5)",
+      "test_02": "rng.standard_normal(x.shape) \u2014 N(0,I) always",
+      "test_06": "Varies by prior: gaussian=N(0,I), empirical=N(\u03bc_data, diag(\u03a3_data)), uniform=hypersphere",
+      "impact": "\u26a0\ufe0f\u26a0\ufe0f CRITICAL DIFFERENCE #2: The 'empirical' prior matches the data distribution, making x and \u03b5 much CLOSER in distribution. This drastically reduces random pairing cost AND makes OT improvement appear larger because the coupling problem is 'easier'. This is not comparing the same thing as Test 2."
+    },
+    {
+      "parameter": "Random cost baseline (denominator)",
+      "test_02": "50 random shuffles of the SAME \u03b5 (N(0,I))",
+      "test_06": "30 random shuffles of EACH prior's \u03b5",
+      "impact": "MODERATE \u2014 different \u03b5 means different random baselines. The 'empirical' prior has a much lower random cost (~17 vs ~137), meaning a small absolute improvement maps to a large % reduction."
+    },
+    {
+      "parameter": "Random seed / RNG state",
+      "test_02": "rng = default_rng(42) \u2014 used for subsampling, noise gen, and shuffles",
+      "test_06": "rng = default_rng(42) \u2014 but T6 uses the SAME rng object across priors and datasets, so its state evolves across calls. The rng state when 'gaussian' runs on real embeddings is NOT the same as T2's.",
+      "impact": "MINOR \u2014 different random draws but shouldn't cause systematic bias"
+    },
+    {
+      "parameter": "Data subsample",
+      "test_02": "x_128[idx] where idx = rng.choice(322387, 1500)",
+      "test_06": "x_128[idx] where idx = rng.choice(322387, 1000) \u2014 BUT rng already consumed draws for GMM data",
+      "impact": "MINOR \u2014 different subset of the same embedding pool"
+    }
+  ],
+  "root_causes": [
+    {
+      "rank": 1,
+      "cause": "Reduction metric: soft OT cost (Test 2) vs hard argmax assignment (Test 6)",
+      "explanation": "Test 2 computes reduction as sum(T * C_raw) / random_cost. The transport plan T is a soft probabilistic coupling where each x_i is matched to MANY \u03b5_j with different weights. The resulting 'cost' averages across all these soft matches. Test 6 instead takes argmax(T, axis=1) to get a HARD 1-to-1 assignment, then computes mean(||x_i - \u03b5_assignment[i]||\u00b2). The hard assignment picks the BEST match for each point, yielding lower path lengths than the soft average. This is like comparing a weighted average distance (soft) to the minimum distance for each point (hard)."
+    },
+    {
+      "rank": 2,
+      "cause": "Non-standard noise priors ('empirical', 'uniform') in Test 6",
+      "explanation": "Test 6's 'empirical' prior draws \u03b5 ~ N(\u03bc_data, diag(\u03a3_data)), making \u03b5 statistically very similar to x. This means x and \u03b5 are already close, so random pairing cost is ~17 (vs ~137 for standard Gaussian). When x and \u03b5 are close, OT can rearrange pairs to get even closer, yielding large % reductions. But this measures 'can OT improve pairing when source\u2248target?' \u2014 a very different question from Test 2's 'can OT improve pairing when source=N(0,I) and target=data?', which is what ELF's actual training uses."
+    },
+    {
+      "rank": 3,
+      "cause": "Sample size difference (1500 vs 1000)",
+      "explanation": "Smaller n makes OT easier (fewer points to transport), potentially amplifying the effect. But this is a minor contributor compared to causes 1 and 2."
+    }
+  ],
+  "summary": "The 2.11% (Test 2) vs 8-31% (Test 6) discrepancy is primarily explained by TWO compounding methodological differences: (1) Test 2 uses soft OT plan cost while Test 6 uses hard argmax assignment cost \u2014 the hard assignment cherry-picks the best match per point, giving ~2-3x better apparent reduction; (2) Test 6's 'empirical' and 'uniform' priors create noise that's much closer to the data distribution, making the coupling problem 'easier' and inflating the reduction %. Neither of these inflated numbers represents ELF's actual training setup (which uses N(0,I) noise and doesn't do argmax assignment). Test 2's 2.11% is the more relevant measurement for the project's go/no-go decision."
+}

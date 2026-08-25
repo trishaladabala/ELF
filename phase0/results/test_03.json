@@ -1,0 +1,18 @@
+{
+  "n_sample": 500,
+  "k_neighbors": 10,
+  "n_local_pcs": 5,
+  "local_residual_mean": 0.09678497562471386,
+  "local_residual_median": 0.033924003279263926,
+  "local_residual_std": 0.10903168059967248,
+  "high_curvature": false,
+  "mle_id": null,
+  "twonn_id": 13.189391149034309,
+  "pca_dim_90pct": 97,
+  "pca_dim_95pct": 112,
+  "pca_dim_99pct": 125,
+  "best_id_estimate": 13.189391149034309,
+  "low_intrinsic_dim": true,
+  "bottleneck_dim": 128,
+  "decision": "MIXED"
+}

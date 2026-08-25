@@ -1,0 +1,14 @@
+{
+  "model_params": 125012,
+  "num_steps": 500,
+  "check_a_l2_decreases": true,
+  "check_b_ce_decreases": true,
+  "check_c_no_errors": true,
+  "check_d_nondegen_sampling": true,
+  "all_pass": true,
+  "early_l2": 19.97969575881958,
+  "late_l2": 13.047747745513917,
+  "early_ce": 5.5960292148590085,
+  "late_ce": 5.546273412704468,
+  "final_total_loss": 8.518702507019043
+}

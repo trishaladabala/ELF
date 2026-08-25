@@ -1,0 +1,11 @@
+{
+  "log_ode_mean": 8.77953158743478,
+  "log_sde_mean": 8.563797824084759,
+  "log_diff_mean": -0.2157337633500205,
+  "log_diff_ci_lo": -0.3820545166070222,
+  "log_diff_ci_hi": -0.05127694199060747,
+  "excludes_zero": true,
+  "reduction_pct_mean": 19.405015330039877,
+  "reduction_pct_ci_lo": 4.998446509588794,
+  "reduction_pct_ci_hi": 31.75421530950303
+}

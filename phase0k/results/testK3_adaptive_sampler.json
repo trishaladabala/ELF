@@ -1,0 +1,32 @@
+{
+  "ode": {
+    "deg_rate": 0.1796875,
+    "mean_log_ppl_nondegen": 8.443844165183368
+  },
+  "fixed_sde": {
+    "deg_rate": 0.0,
+    "mean_log_ppl_nondegen": 8.58752568718046
+  },
+  "adaptive_sde": {
+    "deg_rate": 0.080078125,
+    "mean_log_ppl_nondegen": 8.584739449872787
+  },
+  "comparisons": {
+    "sde_vs_ode": {
+      "mean": 0.16646672154689796,
+      "ci_lo": 0.00780117947037116,
+      "ci_hi": 0.35123555390167843
+    },
+    "adaptive_vs_ode": {
+      "mean": 0.07228984608588654,
+      "ci_lo": -0.11925718936842714,
+      "ci_hi": 0.2574405295820578
+    },
+    "adaptive_vs_sde": {
+      "mean": -0.09417687546101142,
+      "ci_lo": -0.2475807930483436,
+      "ci_hi": 0.04539198587934429
+    }
+  },
+  "verdict": "NO-GO: Adaptive sampler does not match SDE's degeneracy elimination."
+}

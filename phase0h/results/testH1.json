@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "accuracy": 0.7626953125,
+    "mean_confidence": 0.7263817191123962,
+    "mean_entropy": 0.8760302066802979,
+    "n_good_tokens": 1092
+  },
+  "zero_vector": {
+    "description": "Hard zero vector",
+    "total_probed": 1092,
+    "stayed_same": 0,
+    "changed": 1092,
+    "mean_confidence": 0.9958969950675964,
+    "mean_entropy": 0.013314880430698395,
+    "near_uniform_fraction": 0.0,
+    "unperturbed_drift": 0.2844262421131134,
+    "behavior": "sensible"
+  },
+  "gaussian_noise": {
+    "description": "Fresh Gaussian noise (training scale)",
+    "total_probed": 1092,
+    "stayed_same": 61,
+    "changed": 1031,
+    "mean_confidence": 0.574037492275238,
+    "mean_entropy": 1.7232764959335327,
+    "near_uniform_fraction": 0.0,
+    "unperturbed_drift": 0.13719430565834045,
+    "behavior": "sensible"
+  },
+  "re_corruption": {
+    "description": "ELF re-corruption (z\u0303 = p\u00b7x + (1-p)\u00b7\u03b5)",
+    "total_probed": 1092,
+    "stayed_same": 258,
+    "changed": 834,
+    "mean_confidence": 0.6320221424102783,
+    "mean_entropy": 1.3019599914550781,
+    "near_uniform_fraction": 0.0,
+    "unperturbed_drift": 0.12155221402645111,
+    "behavior": "sensible"
+  },
+  "verdict": "PASS",
+  "best_candidates": [
+    "zero_vector",
+    "gaussian_noise",
+    "re_corruption"
+  ]
+}

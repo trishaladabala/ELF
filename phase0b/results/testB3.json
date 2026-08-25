@@ -1,0 +1,44 @@
+{
+  "g0_passes": true,
+  "convergence_results": {
+    "0.0": {
+      "max_diff": 0.0,
+      "mean_diff": 0.0
+    },
+    "1e-06": {
+      "max_diff": 4.0531158447265625e-06,
+      "mean_diff": 7.289422683243174e-07
+    },
+    "0.0001": {
+      "max_diff": 0.0003286600112915039,
+      "mean_diff": 6.905817281221971e-05
+    },
+    "0.01": {
+      "max_diff": 0.03290736675262451,
+      "mean_diff": 0.00690701836720109
+    },
+    "0.1": {
+      "max_diff": 0.3419785499572754,
+      "mean_diff": 0.06971658766269684
+    },
+    "0.5": {
+      "max_diff": 2.0348007678985596,
+      "mean_diff": 0.3996705412864685
+    },
+    "1.0": {
+      "max_diff": 10.599409103393555,
+      "mean_diff": 2.139632225036621
+    }
+  },
+  "sampler_diffs": {
+    "exact_vs_elf": 0.38594695925712585,
+    "exact_vs_ode": 0.37504345178604126,
+    "elf_vs_ode": 0.19807025790214539
+  },
+  "derivation": {
+    "interpolant": "z_t = t*x1 + (1-t)*eps",
+    "velocity": "v(z,t) = (x1 - z)/(1-t)",
+    "score": "nabla_log_p_t = v(z,t) / ((1-t)*sigma^2)",
+    "exact_sde": "dz = v * [1 + g^2/(2*(1-t)*sigma^2)] dt + g*dW"
+  }
+}

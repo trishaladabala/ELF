@@ -1,0 +1,431 @@
+{
+  "results": {
+    "uniform": {
+      "ODE": {
+        "4": {
+          "entropy_mean": 5.545087019602458,
+          "entropy_std": 5.947204250930057e-07,
+          "max_prob_mean": 0.004090109063933293,
+          "max_prob_std": 2.4702013370218915e-07,
+          "diversity_mean": 1.125,
+          "time_mean_s": 0.0651392936706543
+        },
+        "8": {
+          "entropy_mean": 5.5450819333394366,
+          "entropy_std": 2.144294987238573e-06,
+          "max_prob_mean": 0.0040925888655086355,
+          "max_prob_std": 5.371815990901232e-07,
+          "diversity_mean": 1.4479166666666667,
+          "time_mean_s": 0.02741074562072754
+        },
+        "16": {
+          "entropy_mean": 5.54507843653361,
+          "entropy_std": 2.973602125465029e-06,
+          "max_prob_mean": 0.004094336647540331,
+          "max_prob_std": 7.743851536296536e-07,
+          "diversity_mean": 1.78125,
+          "time_mean_s": 0.05391939481099447
+        },
+        "32": {
+          "entropy_mean": 5.545077482859294,
+          "entropy_std": 2.5331779242371287e-06,
+          "max_prob_mean": 0.004094905996074279,
+          "max_prob_std": 8.133243592993525e-07,
+          "diversity_mean": 1.90625,
+          "time_mean_s": 0.15473024050394693
+        },
+        "64": {
+          "entropy_mean": 5.545077006022136,
+          "entropy_std": 2.5331779242371287e-06,
+          "max_prob_mean": 0.004095222024867932,
+          "max_prob_std": 8.255665815623597e-07,
+          "diversity_mean": 1.9375,
+          "time_mean_s": 0.2972101370493571
+        }
+      },
+      "ELF-SDE \u03b3=0.5": {
+        "4": {
+          "entropy_mean": 5.545088768005371,
+          "entropy_std": 0.0,
+          "max_prob_mean": 0.0040895878337323666,
+          "max_prob_std": 1.9809423088611392e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.01612234115600586
+        },
+        "8": {
+          "entropy_mean": 5.545089562733968,
+          "entropy_std": 2.247831920581015e-07,
+          "max_prob_mean": 0.0040887513508399325,
+          "max_prob_std": 8.410598576158326e-08,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.04688525199890137
+        },
+        "16": {
+          "entropy_mean": 5.545089244842529,
+          "entropy_std": 0.0,
+          "max_prob_mean": 0.0040887948125600815,
+          "max_prob_std": 8.184783676648659e-08,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.08873820304870605
+        },
+        "32": {
+          "entropy_mean": 5.545089244842529,
+          "entropy_std": 3.8933590933214475e-07,
+          "max_prob_mean": 0.004088926129043102,
+          "max_prob_std": 1.2957271117551153e-07,
+          "diversity_mean": 1.0208333333333333,
+          "time_mean_s": 0.18865203857421875
+        },
+        "64": {
+          "entropy_mean": 5.545088926951091,
+          "entropy_std": 2.247831920581015e-07,
+          "max_prob_mean": 0.004088984336704016,
+          "max_prob_std": 1.40655919045899e-07,
+          "diversity_mean": 1.03125,
+          "time_mean_s": 0.37375585238138836
+        }
+      },
+      "ELF-SDE \u03b3=1.0": {
+        "4": {
+          "entropy_mean": 5.545085112253825,
+          "entropy_std": 4.49566384116203e-07,
+          "max_prob_mean": 0.004094127876063188,
+          "max_prob_std": 4.822965751923097e-07,
+          "diversity_mean": 1.0104166666666667,
+          "time_mean_s": 0.02189946174621582
+        },
+        "8": {
+          "entropy_mean": 5.54508622487386,
+          "entropy_std": 8.99132768232406e-07,
+          "max_prob_mean": 0.004093290927509467,
+          "max_prob_std": 7.669757899338754e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.04425684611002604
+        },
+        "16": {
+          "entropy_mean": 5.545087814331055,
+          "entropy_std": 0.0,
+          "max_prob_mean": 0.004091484937816858,
+          "max_prob_std": 2.8318664539702694e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.07619865735371907
+        },
+        "32": {
+          "entropy_mean": 5.545088926951091,
+          "entropy_std": 2.247831920581015e-07,
+          "max_prob_mean": 0.004089933975289266,
+          "max_prob_std": 1.7851550577525515e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.18451539675394693
+        },
+        "64": {
+          "entropy_mean": 5.545089403788249,
+          "entropy_std": 4.49566384116203e-07,
+          "max_prob_mean": 0.004089514414469401,
+          "max_prob_std": 1.6766062636364586e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.3785986105600993
+        }
+      },
+      "Exact-SDE g=0.5": {
+        "4": {
+          "entropy_mean": 5.545071125030518,
+          "entropy_std": 4.7842397509550765e-06,
+          "max_prob_mean": 0.004097301823397477,
+          "max_prob_std": 7.227424550877284e-07,
+          "diversity_mean": 2.1145833333333335,
+          "time_mean_s": 0.02018594741821289
+        },
+        "8": {
+          "entropy_mean": 5.545015652974446,
+          "entropy_std": 9.69699162970838e-06,
+          "max_prob_mean": 0.004115416668355465,
+          "max_prob_std": 2.697504201377299e-07,
+          "diversity_mean": 3.5729166666666665,
+          "time_mean_s": 0.041809399922688804
+        },
+        "16": {
+          "entropy_mean": 5.545013427734375,
+          "entropy_std": 1.2865769923431436e-05,
+          "max_prob_mean": 0.004119098652154207,
+          "max_prob_std": 1.043311247775107e-06,
+          "diversity_mean": 3.7916666666666665,
+          "time_mean_s": 0.08739360173543294
+        },
+        "32": {
+          "entropy_mean": 5.545041402180989,
+          "entropy_std": 4.6774352294801585e-06,
+          "max_prob_mean": 0.00411149300634861,
+          "max_prob_std": 1.3370168429294458e-06,
+          "diversity_mean": 3.3958333333333335,
+          "time_mean_s": 0.1481772263844808
+        },
+        "64": {
+          "entropy_mean": 5.545046329498291,
+          "entropy_std": 6.888055381781403e-06,
+          "max_prob_mean": 0.004110772938778003,
+          "max_prob_std": 5.633321692105618e-07,
+          "diversity_mean": 3.3229166666666665,
+          "time_mean_s": 0.34458255767822266
+        }
+      },
+      "Exact-SDE g=1.0": {
+        "4": {
+          "entropy_mean": 5.544031143188477,
+          "entropy_std": 3.3645471297140495e-05,
+          "max_prob_mean": 0.004289317565659682,
+          "max_prob_std": 2.5557593775678675e-06,
+          "diversity_mean": 8.96875,
+          "time_mean_s": 0.021201610565185547
+        },
+        "8": {
+          "entropy_mean": 5.544925053914388,
+          "entropy_std": 2.483625410032223e-05,
+          "max_prob_mean": 0.004142682844152053,
+          "max_prob_std": 2.8111280994959052e-06,
+          "diversity_mean": 4.802083333333333,
+          "time_mean_s": 0.04460700352986654
+        },
+        "16": {
+          "entropy_mean": 5.545029322306315,
+          "entropy_std": 1.1714633797129491e-05,
+          "max_prob_mean": 0.004108511532346408,
+          "max_prob_std": 1.8521850564668414e-06,
+          "diversity_mean": 2.875,
+          "time_mean_s": 0.0938725471496582
+        },
+        "32": {
+          "entropy_mean": 5.545030911763509,
+          "entropy_std": 7.991666851028782e-06,
+          "max_prob_mean": 0.004113108230133851,
+          "max_prob_std": 1.7721383085742561e-06,
+          "diversity_mean": 3.6979166666666665,
+          "time_mean_s": 0.18288612365722656
+        },
+        "64": {
+          "entropy_mean": 5.5450442632039385,
+          "entropy_std": 7.838457747102072e-06,
+          "max_prob_mean": 0.004109661560505629,
+          "max_prob_std": 5.864790242881829e-07,
+          "diversity_mean": 3.2395833333333335,
+          "time_mean_s": 0.32941635449727374
+        }
+      }
+    },
+    "logit_normal": {
+      "ODE": {
+        "4": {
+          "entropy_mean": 5.545089244842529,
+          "entropy_std": 3.8933590933214475e-07,
+          "max_prob_mean": 0.004089119533697764,
+          "max_prob_std": 3.2381496490068157e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.018508036931355793
+        },
+        "8": {
+          "entropy_mean": 5.545088291168213,
+          "entropy_std": 3.8933590933214475e-07,
+          "max_prob_mean": 0.004089476075023413,
+          "max_prob_std": 2.558333110987229e-07,
+          "diversity_mean": 1.0520833333333333,
+          "time_mean_s": 0.02374998728434245
+        },
+        "16": {
+          "entropy_mean": 5.545084635416667,
+          "entropy_std": 2.4726151126391165e-06,
+          "max_prob_mean": 0.004091079036394755,
+          "max_prob_std": 7.814103814062537e-07,
+          "diversity_mean": 1.2291666666666667,
+          "time_mean_s": 0.06255459785461426
+        },
+        "32": {
+          "entropy_mean": 5.545080820719401,
+          "entropy_std": 4.288589974477145e-06,
+          "max_prob_mean": 0.0040930660131076975,
+          "max_prob_std": 1.6168866041476421e-06,
+          "diversity_mean": 1.53125,
+          "time_mean_s": 0.18087053298950195
+        },
+        "64": {
+          "entropy_mean": 5.5450789133707685,
+          "entropy_std": 3.241869299311819e-06,
+          "max_prob_mean": 0.004094031173735857,
+          "max_prob_std": 9.204700489855723e-07,
+          "diversity_mean": 1.6979166666666667,
+          "time_mean_s": 0.346510648727417
+        }
+      },
+      "ELF-SDE \u03b3=0.5": {
+        "4": {
+          "entropy_mean": 5.545020421346028,
+          "entropy_std": 4.78128169049857e-05,
+          "max_prob_mean": 0.004131632236142953,
+          "max_prob_std": 2.874447559284838e-05,
+          "diversity_mean": 2.3541666666666665,
+          "time_mean_s": 0.01945010821024577
+        },
+        "8": {
+          "entropy_mean": 5.545087655385335,
+          "entropy_std": 9.79807218387759e-07,
+          "max_prob_mean": 0.004091286410888036,
+          "max_prob_std": 1.2254358653252595e-06,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.041546026865641274
+        },
+        "16": {
+          "entropy_mean": 5.54508908589681,
+          "entropy_std": 4.49566384116203e-07,
+          "max_prob_mean": 0.004089408088475466,
+          "max_prob_std": 5.899310413830423e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.09415260950724284
+        },
+        "32": {
+          "entropy_mean": 5.5450897216796875,
+          "entropy_std": 0.0,
+          "max_prob_mean": 0.004088837808618943,
+          "max_prob_std": 1.657406789838108e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.1797179381052653
+        },
+        "64": {
+          "entropy_mean": 5.5450897216796875,
+          "entropy_std": 0.0,
+          "max_prob_mean": 0.00408871378749609,
+          "max_prob_std": 7.293312291753007e-08,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.3776589234670003
+        }
+      },
+      "ELF-SDE \u03b3=1.0": {
+        "4": {
+          "entropy_mean": 5.545050303141276,
+          "entropy_std": 1.3267921927585097e-05,
+          "max_prob_mean": 0.004118288091073434,
+          "max_prob_std": 8.030082710877124e-06,
+          "diversity_mean": 1.6770833333333333,
+          "time_mean_s": 0.02073351542154948
+        },
+        "8": {
+          "entropy_mean": 5.545063018798828,
+          "entropy_std": 1.5900928497822824e-05,
+          "max_prob_mean": 0.00411037386705478,
+          "max_prob_std": 1.138818958286231e-05,
+          "diversity_mean": 1.375,
+          "time_mean_s": 0.04640738169352213
+        },
+        "16": {
+          "entropy_mean": 5.545075098673503,
+          "entropy_std": 1.0162587078822949e-05,
+          "max_prob_mean": 0.004101974423974752,
+          "max_prob_std": 8.08586302988061e-06,
+          "diversity_mean": 1.1145833333333333,
+          "time_mean_s": 0.09160304069519043
+        },
+        "32": {
+          "entropy_mean": 5.545085112253825,
+          "entropy_std": 2.816525323656297e-06,
+          "max_prob_mean": 0.004093920191129048,
+          "max_prob_std": 2.8342577015892587e-06,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.18911496798197427
+        },
+        "64": {
+          "entropy_mean": 5.5450873374938965,
+          "entropy_std": 3.8933590933214475e-07,
+          "max_prob_mean": 0.0040916769454876585,
+          "max_prob_std": 2.2709008714737362e-07,
+          "diversity_mean": 1.0,
+          "time_mean_s": 0.3729877471923828
+        }
+      },
+      "Exact-SDE g=0.5": {
+        "4": {
+          "entropy_mean": 5.5450865427653,
+          "entropy_std": 4.495663841162029e-06,
+          "max_prob_mean": 0.004089411658545335,
+          "max_prob_std": 1.038390865039085e-06,
+          "diversity_mean": 1.1041666666666667,
+          "time_mean_s": 0.021935304005940754
+        },
+        "8": {
+          "entropy_mean": 5.545082410176595,
+          "entropy_std": 1.997916712757196e-06,
+          "max_prob_mean": 0.004092660111685594,
+          "max_prob_std": 7.978867873512498e-07,
+          "diversity_mean": 1.4791666666666667,
+          "time_mean_s": 0.02873690923055013
+        },
+        "16": {
+          "entropy_mean": 5.545072714487712,
+          "entropy_std": 7.011650403376508e-06,
+          "max_prob_mean": 0.0040974244475364685,
+          "max_prob_std": 3.0762446258293125e-06,
+          "diversity_mean": 2.0520833333333335,
+          "time_mean_s": 0.07414023081461589
+        },
+        "32": {
+          "entropy_mean": 5.545034726460774,
+          "entropy_std": 2.9346046200674112e-05,
+          "max_prob_mean": 0.004111124823490779,
+          "max_prob_std": 1.056415893318088e-05,
+          "diversity_mean": 3.2916666666666665,
+          "time_mean_s": 0.19101333618164062
+        },
+        "64": {
+          "entropy_mean": 5.545029481252034,
+          "entropy_std": 1.9114503202949273e-05,
+          "max_prob_mean": 0.004114505524436633,
+          "max_prob_std": 1.7143943421821435e-06,
+          "diversity_mean": 3.4895833333333335,
+          "time_mean_s": 0.3965737024943034
+        }
+      },
+      "Exact-SDE g=1.0": {
+        "4": {
+          "entropy_mean": 5.54504410425822,
+          "entropy_std": 6.04666786636293e-05,
+          "max_prob_mean": 0.004102758597582579,
+          "max_prob_std": 1.7381085963949235e-05,
+          "diversity_mean": 2.15625,
+          "time_mean_s": 0.02295200030008952
+        },
+        "8": {
+          "entropy_mean": 5.544760068257649,
+          "entropy_std": 0.00021292415082350489,
+          "max_prob_mean": 0.004168207601954539,
+          "max_prob_std": 4.251969350149946e-05,
+          "diversity_mean": 5.427083333333333,
+          "time_mean_s": 0.04546769460042318
+        },
+        "16": {
+          "entropy_mean": 5.544488112131755,
+          "entropy_std": 0.00027537207123744863,
+          "max_prob_mean": 0.004219693131744862,
+          "max_prob_std": 4.964893066970225e-05,
+          "diversity_mean": 7.104166666666667,
+          "time_mean_s": 0.09718950589497884
+        },
+        "32": {
+          "entropy_mean": 5.544204076131185,
+          "entropy_std": 0.00045348013202168734,
+          "max_prob_mean": 0.0042643022413055105,
+          "max_prob_std": 6.570518459523472e-05,
+          "diversity_mean": 8.59375,
+          "time_mean_s": 0.19148786862691244
+        },
+        "64": {
+          "entropy_mean": 5.544277826944987,
+          "entropy_std": 0.00023018984216342938,
+          "max_prob_mean": 0.004260282032191753,
+          "max_prob_std": 4.237595431803741e-05,
+          "diversity_mean": 8.479166666666666,
+          "time_mean_s": 0.4003816445668538
+        }
+      }
+    }
+  },
+  "pattern_holds": true,
+  "exact_beats_approx": true,
+  "outcome": "strong_proceed"
+}

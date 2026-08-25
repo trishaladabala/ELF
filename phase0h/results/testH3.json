@@ -1,0 +1,61 @@
+{
+  "pass_metrics": [
+    {
+      "pass": 0,
+      "total_errors": 809,
+      "original_errors_remaining": 359,
+      "new_errors_introduced": 450,
+      "n_flagged": 512,
+      "mean_entropy": 1.1326119899749756,
+      "threshold": 1.685748815536499
+    },
+    {
+      "pass": 1,
+      "total_errors": 934,
+      "original_errors_remaining": 358,
+      "new_errors_introduced": 576,
+      "n_flagged": 512,
+      "mean_entropy": 1.090505838394165,
+      "threshold": 1.5576869249343872
+    },
+    {
+      "pass": 2,
+      "total_errors": 1020,
+      "original_errors_remaining": 365,
+      "new_errors_introduced": 655,
+      "n_flagged": 512,
+      "mean_entropy": 0.960121750831604,
+      "threshold": 1.3818668127059937
+    },
+    {
+      "pass": 3,
+      "total_errors": 1152,
+      "original_errors_remaining": 374,
+      "new_errors_introduced": 778,
+      "n_flagged": 512,
+      "mean_entropy": 0.8106452226638794,
+      "threshold": 1.1922013759613037
+    },
+    {
+      "pass": 4,
+      "total_errors": 1262,
+      "original_errors_remaining": 374,
+      "new_errors_introduced": 888,
+      "n_flagged": 512,
+      "mean_entropy": 0.655447244644165,
+      "threshold": 0.9891922473907471
+    },
+    {
+      "pass": 5,
+      "total_errors": 1438,
+      "original_errors_remaining": 380,
+      "new_errors_introduced": 1058,
+      "n_flagged": 512,
+      "mean_entropy": 0.47140708565711975,
+      "threshold": 0.706723690032959
+    }
+  ],
+  "monotonic_decrease": false,
+  "new_error_rate_low": false,
+  "verdict": "NEEDS_FIX"
+}

@@ -1,0 +1,12 @@
+{
+  "n_subsample": 1500,
+  "embedding_dim": 128,
+  "sinkhorn_reg": 0.05,
+  "random_cost_mean": 137.43520505105585,
+  "random_cost_std": 0.15197075103348504,
+  "identity_cost": 137.25796285444548,
+  "ot_cost": 134.53120130428067,
+  "ot_random_ratio": 0.978870015541532,
+  "reduction_pct": 2.112998445846803,
+  "decision": "NO-GO"
+}

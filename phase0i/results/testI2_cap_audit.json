@@ -1,0 +1,17 @@
+{
+  "N": 512,
+  "ode_degenerate_count": 110,
+  "sde_degenerate_count": 0,
+  "fisher_exact_p": 2.157118294021765e-36,
+  "subset_N": 402,
+  "subset_log_ode_mean": 8.221255128063373,
+  "subset_log_sde_mean": 8.522109150293455,
+  "subset_log_diff_mean": 0.3008540222300819,
+  "subset_log_diff_ci_lo": 0.13461786852547186,
+  "subset_log_diff_ci_hi": 0.477711023620112,
+  "subset_excludes_zero": true,
+  "subset_reduction_pct_mean": -35.1012109407749,
+  "subset_reduction_pct_ci_lo": -61.237947647025436,
+  "subset_reduction_pct_ci_hi": -14.409950437680052,
+  "verdict": "On non-degenerate samples, the SDE is significantly WORSE than ODE. The original 19.4% advantage was entirely driven by the degeneracy-rate difference."
+}

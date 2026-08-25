@@ -1,0 +1,55 @@
+{
+  "fixed_parameters": {
+    "n": 1500,
+    "sinkhorn_reg": 0.05,
+    "sinkhorn_max_iter": 2000,
+    "sinkhorn_stop_thr": 1e-09,
+    "seed": 42,
+    "n_shuffles": 50
+  },
+  "original_test2_reduction_pct": 2.11,
+  "original_test6_reductions_pct": {
+    "gaussian": 8.15,
+    "empirical": 30.94,
+    "uniform": 27.89
+  },
+  "controlled_results": {
+    "gaussian": {
+      "soft_ot_cost": 132.88574931401413,
+      "hard_path_sq": 124.14196607914411,
+      "random_cost_mean": 135.97540159000474,
+      "random_cost_std": 0.14062963061525036,
+      "soft_reduction_pct": 2.2722141209823854,
+      "hard_reduction_pct": 8.702629573061305,
+      "compute_time_s": 0.029120206832885742,
+      "n_iters": 10,
+      "row_marginal_violation_L1": 1.1373280789372942e-16,
+      "col_marginal_violation_L1": 1.2342557531574982e-15
+    },
+    "empirical": {
+      "soft_ot_cost": 15.217738694973722,
+      "hard_path_sq": 11.661098742824375,
+      "random_cost_mean": 17.073031762519765,
+      "random_cost_std": 0.05452992773020609,
+      "soft_reduction_pct": 10.86680499018895,
+      "hard_reduction_pct": 31.698722845324667,
+      "compute_time_s": 0.01898813247680664,
+      "n_iters": 10,
+      "row_marginal_violation_L1": 1.1232334506949826e-16,
+      "col_marginal_violation_L1": 1.2178059385459065e-08
+    },
+    "uniform": {
+      "soft_ot_cost": 15.546017110172793,
+      "hard_path_sq": 12.095556478180828,
+      "random_cost_mean": 16.98695181027235,
+      "random_cost_std": 0.03831034294865279,
+      "soft_reduction_pct": 8.48259720868928,
+      "hard_reduction_pct": 28.7950150605219,
+      "compute_time_s": 0.018752098083496094,
+      "n_iters": 10,
+      "row_marginal_violation_L1": 1.1525069093520912e-16,
+      "col_marginal_violation_L1": 2.8952719128422233e-13
+    }
+  },
+  "key_finding": "Under matched conditions (n=1500, same seed, same \u03b5=0.05), the discrepancy is fully explained by two factors: (1) Soft vs hard metric \u2014 hard argmax gives ~2-5x larger apparent reduction than the soft plan cost for the SAME Sinkhorn solution; (2) Non-standard priors \u2014 'empirical' and 'uniform' \u03b5 are much closer to the data, reducing random pairing cost by ~10x and inflating % reduction. The gaussian-prior soft-metric number (Test 2's exact methodology) is the relevant one for ELF's actual training setup."
+}

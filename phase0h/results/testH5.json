@@ -1,0 +1,12 @@
+{
+  "before_ppl_mean": 6939.004681211507,
+  "after_ppl_mean": 11468.797679060575,
+  "diff_mean": -4529.79299784907,
+  "diff_ci_lo": -7793.018597134464,
+  "diff_ci_hi": -1523.0432474013603,
+  "excludes_zero": true,
+  "improved": 109,
+  "worsened": 109,
+  "unchanged": 38,
+  "verdict": "SIGNIFICANT_WORSENING"
+}

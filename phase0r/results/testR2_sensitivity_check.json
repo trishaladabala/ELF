@@ -1,0 +1,54 @@
+{
+  "control": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.87176214531064,
+    "sde_log_ppl": 8.90188417956233,
+    "sde_penalty": 0.03012203425168991,
+    "sde_penalty_ci": [
+      -0.08776027406565845,
+      0.15891506965272126
+    ],
+    "curvature_correlation": -0.03756553165802751,
+    "avg_ode_curvature": 0.0027830596081912518
+  },
+  "reg_0.1": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.885368432849646,
+    "sde_log_ppl": 8.895263444632292,
+    "sde_penalty": 0.00989501178264618,
+    "sde_penalty_ci": [
+      -0.11178060434758663,
+      0.14258948066271837
+    ],
+    "curvature_correlation": -0.06502468491834673,
+    "avg_ode_curvature": 0.0027775312773883343
+  },
+  "reg_0.05": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.963990297168493,
+    "sde_log_ppl": 8.960808955132961,
+    "sde_penalty": -0.0031813420355319977,
+    "sde_penalty_ci": [
+      -0.11262399917468428,
+      0.1152964347973466
+    ],
+    "curvature_correlation": -0.016965218561064435,
+    "avg_ode_curvature": 0.002792193554341793
+  },
+  "reg_0.5": {
+    "ode_deg_rate": 0.0,
+    "sde_deg_rate": 0.0,
+    "ode_log_ppl": 8.907214406877756,
+    "sde_log_ppl": 8.913028452545404,
+    "sde_penalty": 0.005814045667648315,
+    "sde_penalty_ci": [
+      -0.1048131898511201,
+      0.11981726707890626
+    ],
+    "curvature_correlation": -0.02807040793250082,
+    "avg_ode_curvature": 0.002745269099250436
+  }
+}

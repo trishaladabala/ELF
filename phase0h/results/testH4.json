@@ -1,0 +1,94 @@
+{
+  "methods": {
+    "zero_mask": [
+      {
+        "pass": 0,
+        "total_errors": 809,
+        "original_remaining": 359,
+        "new_errors": 450,
+        "n_flagged": 512
+      },
+      {
+        "pass": 1,
+        "total_errors": 1170,
+        "original_remaining": 373,
+        "new_errors": 797,
+        "n_flagged": 512
+      },
+      {
+        "pass": 2,
+        "total_errors": 1646,
+        "original_remaining": 382,
+        "new_errors": 1264,
+        "n_flagged": 512
+      },
+      {
+        "pass": 3,
+        "total_errors": 2007,
+        "original_remaining": 382,
+        "new_errors": 1625,
+        "n_flagged": 512
+      },
+      {
+        "pass": 4,
+        "total_errors": 2040,
+        "original_remaining": 382,
+        "new_errors": 1658,
+        "n_flagged": 512
+      },
+      {
+        "pass": 5,
+        "total_errors": 2040,
+        "original_remaining": 382,
+        "new_errors": 1658,
+        "n_flagged": 433
+      }
+    ],
+    "re_corruption": [
+      {
+        "pass": 0,
+        "total_errors": 809,
+        "original_remaining": 359,
+        "new_errors": 450,
+        "n_flagged": 512
+      },
+      {
+        "pass": 1,
+        "total_errors": 936,
+        "original_remaining": 355,
+        "new_errors": 581,
+        "n_flagged": 512
+      },
+      {
+        "pass": 2,
+        "total_errors": 1023,
+        "original_remaining": 361,
+        "new_errors": 662,
+        "n_flagged": 512
+      },
+      {
+        "pass": 3,
+        "total_errors": 1129,
+        "original_remaining": 365,
+        "new_errors": 764,
+        "n_flagged": 512
+      },
+      {
+        "pass": 4,
+        "total_errors": 1263,
+        "original_remaining": 373,
+        "new_errors": 890,
+        "n_flagged": 512
+      },
+      {
+        "pass": 5,
+        "total_errors": 1426,
+        "original_remaining": 375,
+        "new_errors": 1051,
+        "n_flagged": 512
+      }
+    ]
+  },
+  "winner": "re_corruption",
+  "n_original_errors": 384
+}

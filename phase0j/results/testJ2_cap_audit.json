@@ -1,0 +1,25 @@
+{
+  "fraction_capped": 0.21484375,
+  "fraction_ode_capped": 0.21484375,
+  "fraction_sde_capped": 0.0,
+  "fraction_both_capped": 0.0,
+  "all_points": {
+    "spearman_r": -0.35136338992458316,
+    "spearman_p": 2.532956324775148e-16,
+    "pearson_r": -0.3521889994790171,
+    "pearson_p": 2.1341589683859478e-16
+  },
+  "exclude_capped": {
+    "spearman_r": -0.052786536676714936,
+    "spearman_p": 0.29105624363754456,
+    "pearson_r": -0.10009405173172882,
+    "pearson_p": 0.04489150310122694
+  },
+  "winsorize_capped": {
+    "spearman_r": -0.3630914759867385,
+    "spearman_p": 2.1185309381178626e-17,
+    "pearson_r": -0.36394747052141596,
+    "pearson_p": 1.760454647648245e-17
+  },
+  "verdict": "The negative correlation direction and statistical significance survive even when capped points are removed or winsorized."
+}

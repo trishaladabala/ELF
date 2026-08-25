@@ -1,0 +1,33 @@
+{
+  "steps": [
+    {
+      "name": "download_elf_b",
+      "status": "PASS"
+    },
+    {
+      "name": "load_elf_b",
+      "status": "PASS"
+    },
+    {
+      "name": "sde_generation",
+      "status": "PASS",
+      "n_samples": 32,
+      "deg_rate": 0.0,
+      "mean_ppl_nondegen": 55.35907607230759,
+      "median_ppl_nondegen": 45.3513062884676,
+      "paper_ppl": 24.1,
+      "abs_diff": 31.259076072307586,
+      "trajectory_ok": true,
+      "curvature_ok": true
+    },
+    {
+      "name": "load_elf_m",
+      "status": "PASS"
+    },
+    {
+      "name": "load_elf_l",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "PASS: Pipeline wired correctly. Gen PPL=55.4 (paper=24.1). All sizes load. Trajectory OK."
+}

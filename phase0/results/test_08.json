@@ -1,0 +1,16 @@
+{
+  "stable": true,
+  "has_nan": false,
+  "has_divergence": false,
+  "training_error": null,
+  "l2_decreases": true,
+  "ce_decreases": true,
+  "early_l2": 24.696324825286865,
+  "late_l2": 13.560923075675964,
+  "early_ce": 5.603854966163635,
+  "late_ce": 5.545056223869324,
+  "ce_rate_ok": true,
+  "baseline_ce_ratio": 0.9911087308081907,
+  "ot_ce_ratio": 0.9895074475074226,
+  "decision": "GO"
+}
