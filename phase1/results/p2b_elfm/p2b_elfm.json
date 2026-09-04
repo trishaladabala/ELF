@@ -1,0 +1,19 @@
+{
+  "model": "ELF-M",
+  "params_approx": 342000000,
+  "n_samples": 256,
+  "n_steps": 64,
+  "gamma": 1.5,
+  "ode_deg_rate": 0.0,
+  "sde_deg_rate": 0.0,
+  "ode_mean_ppl": 30.913385477624153,
+  "sde_mean_ppl": 46.987840961720536,
+  "logppl_diff_ode_minus_sde": -0.018658497370779514,
+  "ci_95": [
+    -0.11854464001953602,
+    0.07460863098967811
+  ],
+  "sde_better": false,
+  "n_joint_nondegen": 256,
+  "total_time_s": 1374.722418308258
+}
