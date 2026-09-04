@@ -31,7 +31,7 @@ from utils.sampling_utils import sample_timesteps, net_out_to_v_x, get_sampling_
 RESULTS_DIR = Path(__file__).resolve().parent / "results"
 PHASE0_RESULTS = Path(__file__).resolve().parent.parent / "phase0" / "results"
 C4_RESULTS = Path(__file__).resolve().parent.parent / "phase0c" / "results"
-DEVICE = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
 
 ENCODER_DIM = 128
 TOY_MAX_LEN = 16
@@ -410,11 +410,11 @@ def main():
         print(f"\n{'='*40} Scale: {name} {'='*40}")
 
         if name == "275K":
-            # Use existing C4 checkpoint if available, else train
+            # Use existing C4 checkpoint
             ckpt_path = C4_RESULTS / "mini_elf_real_checkpoint.pt"
             if not ckpt_path.exists():
-                print(f"  C4 checkpoint not found at {ckpt_path}, training from scratch...")
-                ckpt_path = train_checkpoint(scale_cfg, embeddings, token_ids, vocab_size)
+                print(f"  ERROR: C4 checkpoint not found at {ckpt_path}")
+                continue
         else:
             ckpt_path = train_checkpoint(scale_cfg, embeddings, token_ids, vocab_size)
 

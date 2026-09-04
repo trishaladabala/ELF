@@ -1,8 +1,0 @@
-{
-  "spearman_r_flat": 0.024089531373233428,
-  "spearman_p_flat": 1.7502891455615617e-133,
-  "n_valid_pairs": 1041408,
-  "mean_per_seq_r": 0.019598784038741084,
-  "n_seqs": 1017,
-  "replicates": false
-}

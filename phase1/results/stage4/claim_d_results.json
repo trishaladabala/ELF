@@ -1,6 +1,0 @@
-{
-  "auto_voided": true,
-  "reason": "ODE degeneracy < 1%",
-  "deg_rate": 0.0,
-  "n_deg": 0
-}
