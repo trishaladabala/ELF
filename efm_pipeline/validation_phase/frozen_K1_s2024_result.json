@@ -1,0 +1,15 @@
+{
+  "experiment": "frozen_K1_s2024",
+  "timestamp": "2026-09-22T14:56:13.921933",
+  "elapsed_seconds": 3.4,
+  "num_samples": 512,
+  "avg_length_words": 64.0,
+  "gen_ppl": 1.2175412212205947,
+  "mean_entropy_ppl": 0.08048483729362488,
+  "unigram_entropy_bits": -1.4428232973175175e-12,
+  "trigram_repetition": 0.9838709677419358,
+  "avg_words": 64.0,
+  "std_words": 0.0,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 3.4
+}

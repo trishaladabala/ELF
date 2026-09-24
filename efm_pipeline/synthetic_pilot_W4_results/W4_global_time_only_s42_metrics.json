@@ -1,0 +1,11 @@
+{
+    "wave_1_acc": 0.0,
+    "wave_2_acc": 0.0,
+    "wave_3_acc": 0.0,
+    "overall_dep_acc": 0.0,
+    "wave_0_exact_match": 0.004562499932944775,
+    "wave_1_exact_match": 0.0038125000428408384,
+    "wave_2_exact_match": 0.0042500002309679985,
+    "wave_3_exact_match": 0.004437500145286322,
+    "overall_exact_match": 0.004265625029802322
+}

@@ -1,0 +1,15 @@
+{
+  "experiment": "stage2_continuous_eval",
+  "timestamp": "2026-09-18T14:38:09.020806",
+  "elapsed_seconds": 2.8,
+  "num_samples": 256,
+  "avg_length_words": 42.20703125,
+  "gen_ppl": 6567.590738331209,
+  "mean_entropy_ppl": 4.020628101192415,
+  "unigram_entropy_bits": 11.478885095892174,
+  "trigram_repetition": 0.0,
+  "avg_words": 42.20703125,
+  "std_words": 5.367737587803957,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 2.8
+}

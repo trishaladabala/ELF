@@ -1,0 +1,15 @@
+{
+  "experiment": "stage3b_quant_learned_K1",
+  "timestamp": "2026-09-18T14:44:40.658216",
+  "elapsed_seconds": 2.6,
+  "num_samples": 256,
+  "avg_length_words": 43.76953125,
+  "gen_ppl": 2049.5523058921594,
+  "mean_entropy_ppl": 3.5282843597233295,
+  "unigram_entropy_bits": 9.458636794764779,
+  "trigram_repetition": 0.0019462254421327855,
+  "avg_words": 43.76953125,
+  "std_words": 11.902501434794008,
+  "empty_fraction": 0.00390625,
+  "eval_time_seconds": 2.6
+}

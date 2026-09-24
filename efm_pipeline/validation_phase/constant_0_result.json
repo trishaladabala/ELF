@@ -1,0 +1,15 @@
+{
+  "experiment": "constant_0",
+  "timestamp": "2026-09-18T17:01:49.160793",
+  "elapsed_seconds": 3.6,
+  "num_samples": 512,
+  "avg_length_words": 35.5234375,
+  "gen_ppl": 1709.5394136697535,
+  "mean_entropy_ppl": 3.470791397150606,
+  "unigram_entropy_bits": 10.276701455587975,
+  "trigram_repetition": 0.0076061372834857815,
+  "avg_words": 35.5234375,
+  "std_words": 11.337999467877644,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 3.6
+}

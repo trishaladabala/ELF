@@ -1,0 +1,15 @@
+{
+  "experiment": "global_time_only_s137",
+  "timestamp": "2026-09-22T13:20:18.628335",
+  "elapsed_seconds": 3.6,
+  "num_samples": 512,
+  "avg_length_words": 36.150390625,
+  "gen_ppl": 1134.8445781624414,
+  "mean_entropy_ppl": 3.2517207806231454,
+  "unigram_entropy_bits": 10.046631844487912,
+  "trigram_repetition": 0.02376765571535469,
+  "avg_words": 36.150390625,
+  "std_words": 11.383532164267473,
+  "empty_fraction": 0.00390625,
+  "eval_time_seconds": 3.6
+}

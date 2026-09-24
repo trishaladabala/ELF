@@ -1,0 +1,18 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Method (De-En)} & \textbf{BLEU} $\uparrow$ & \textbf{Entropy} $\uparrow$ \\
+\hline
+0. Frozen Native Decoder (Baseline) & 13.05 & 0.152 \\
+1. Adapter (Clean-State CE) & 13.02 & 0.108 \\
+2. Adapter (Isotropic-Gaussian CE) & 13.07 & 0.155 \\
+3. Adapter (Scalar Hinge Margin) & 12.67 & 0.048 \\
+4. Adapter (Trajectory-Residual CE) & 3.79 & 1.064 \\
+5. \quad + Sensitivity Penalty & 5.39 & 0.745 \\
+6. \quad + Consistency KL & 4.31 & 0.733 \\
+\hline
+\end{tabular}
+\caption{Ablation of Sensitivity-Regularized Decoder Adapter.}
+\label{tab:ablation}
+\end{table}

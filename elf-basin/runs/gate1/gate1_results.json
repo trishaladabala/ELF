@@ -1,0 +1,23 @@
+{
+  "checkpoint": "ELF-B-owt",
+  "num_samples": 512,
+  "num_steps": 32,
+  "seed": 42,
+  "gen_time_s": 960.8,
+  "peak_vram_mb": 4901,
+  "margin_first": 0.3766,
+  "margin_last": 19.9615,
+  "entry_time_stats": {
+    "std": 6.48,
+    "iqr": 9.0,
+    "p25": 12.0,
+    "p50": 16.0,
+    "p75": 21.0
+  },
+  "checks": {
+    "margin_monotone": true,
+    "sc_peak_middle": false,
+    "entry_staggered": true
+  },
+  "gate_1_pass": true
+}

@@ -1,0 +1,28 @@
+/home/snu/trishal_sanjay_proj/ELF/efm_pipeline/efm_pipeline/train_efm.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(cache_path, map_location="cpu")
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/snu/trishal_sanjay_proj/ELF/efm_pipeline/efm_pipeline/experiments/validation_controls.py", line 148, in <module>
+    main()
+  File "/home/snu/trishal_sanjay_proj/ELF/efm_pipeline/efm_pipeline/experiments/validation_controls.py", line 126, in main
+    samples = generate_efm_samples(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snu/trishal_sanjay_proj/ELF/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snu/trishal_sanjay_proj/ELF/efm_pipeline/efm_pipeline/eval_runner.py", line 212, in generate_efm_samples
+    _, decoder_logits = model(z, t_final, local_times=torch.ones_like(local_times),
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ones_like(): argument 'input' (position 1) must be Tensor, not NoneType
+Using device: cuda
+Loading tokenizer t5-small...
+Loading dataset wikitext2...
+Loading cached embeddings from data_cache/wikitext2_t5-small_len64.pt
+
+============================================================
+Starting condition: global_time_only
+============================================================
+[global_time_only] Found existing checkpoint at checkpoints_val/global_time_only/global_time_only/checkpoint_50000.pt. Skipping training.
+[global_time_only] Loading weights from checkpoints_val/global_time_only/global_time_only/checkpoint_50000.pt...
+[global_time_only] Generating samples...

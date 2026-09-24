@@ -1,0 +1,15 @@
+{
+  "experiment": "broadcast_baseline",
+  "timestamp": "2026-09-18T17:51:10.546217",
+  "elapsed_seconds": 3.3,
+  "num_samples": 512,
+  "avg_length_words": 37.478515625,
+  "gen_ppl": 1918.884563725051,
+  "mean_entropy_ppl": 3.5739836532156914,
+  "unigram_entropy_bits": 10.264170039306919,
+  "trigram_repetition": 0.0021431329161229213,
+  "avg_words": 37.478515625,
+  "std_words": 11.490295129875074,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 3.3
+}

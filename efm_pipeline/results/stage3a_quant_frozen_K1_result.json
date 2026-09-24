@@ -1,0 +1,15 @@
+{
+  "experiment": "stage3a_quant_frozen_K1",
+  "timestamp": "2026-09-18T14:42:04.771383",
+  "elapsed_seconds": 2.5,
+  "num_samples": 256,
+  "avg_length_words": 47.37109375,
+  "gen_ppl": 285.8822357189201,
+  "mean_entropy_ppl": 3.0091431397013366,
+  "unigram_entropy_bits": 8.976031224476408,
+  "trigram_repetition": 0.10322135995095466,
+  "avg_words": 47.37109375,
+  "std_words": 10.644420870987343,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 2.5
+}

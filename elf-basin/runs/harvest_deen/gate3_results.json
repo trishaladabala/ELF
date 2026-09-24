@@ -1,0 +1,16 @@
+{
+  "native_bleu": 10.178566048172884,
+  "oracle_bleu": 84.0750452673175,
+  "oracle_improvement": 73.89647921914462,
+  "early_bleus": {
+    "40": 10.414418701619711,
+    "48": 10.340353038409368,
+    "56": 10.27445777794216
+  },
+  "error_taxonomy": {
+    "total_tokens": 79060,
+    "total_errors": 74499,
+    "error_rate": 0.9423096382494308
+  },
+  "gate_3_pass": true
+}

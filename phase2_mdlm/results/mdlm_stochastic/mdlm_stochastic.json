@@ -1,0 +1,39 @@
+{
+  "model": "MDLM (kuleshov-group/mdlm-owt)",
+  "architecture": "Masked Discrete Diffusion (DiT backbone)",
+  "n_target_samples": 512,
+  "n_steps": 1000,
+  "conditions": [
+    {
+      "label": "T=0.0",
+      "temperature": 0.0,
+      "n_texts": 0,
+      "deg_rate": 1.0,
+      "mean_ppl": Infinity,
+      "mean_logppl": Infinity,
+      "n_valid": 0,
+      "gen_time": 3.067017078399658
+    },
+    {
+      "label": "T=0.5",
+      "temperature": 0.5,
+      "n_texts": 0,
+      "deg_rate": 1.0,
+      "mean_ppl": Infinity,
+      "mean_logppl": Infinity,
+      "n_valid": 0,
+      "gen_time": 2.7125017642974854
+    },
+    {
+      "label": "T=1.0",
+      "temperature": 1.0,
+      "n_texts": 0,
+      "deg_rate": 1.0,
+      "mean_ppl": Infinity,
+      "mean_logppl": Infinity,
+      "n_valid": 0,
+      "gen_time": 2.7205231189727783
+    }
+  ],
+  "total_time_s": 20.517964363098145
+}

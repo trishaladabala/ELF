@@ -1,0 +1,20 @@
+{
+  "checkpoint": "ELF-B-de-en",
+  "checkpoint_step": 880600,
+  "config_hash": "d578cd6e3a61",
+  "seed": 42,
+  "num_samples": 3000,
+  "batch_size": 32,
+  "num_steps": 64,
+  "cfg": 2.0,
+  "sc_cfg": 1.0,
+  "time_schedule": "logit_normal",
+  "eval_data": "embedded-language-flows/wmt14_de-en_validation_t5",
+  "bleu": 26.513150038509888,
+  "rouge1": 60.18861832830905,
+  "rouge2": 34.463410169992905,
+  "rougeL": 55.43727179181422,
+  "gen_time_s": 587.0205311775208,
+  "peak_vram_mb": 1691.857408,
+  "gate_0_deen_pass": true
+}

@@ -1,0 +1,22 @@
+{
+  "num_samples": 3000,
+  "num_seeds": 3,
+  "total_pairs": 9000,
+  "num_steps": 64,
+  "store_step_indices": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56
+  ],
+  "cfg": 2.0,
+  "sc_cfg": 1.0,
+  "time_schedule": "logit_normal",
+  "seq_len": 128,
+  "d_model": 512,
+  "base_seed": 42
+}

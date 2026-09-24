@@ -1,0 +1,15 @@
+{
+  "experiment": "continuous_local_time",
+  "timestamp": "2026-09-18T16:54:10.687525",
+  "elapsed_seconds": 9.7,
+  "num_samples": 512,
+  "avg_length_words": 33.505859375,
+  "gen_ppl": 1485.6079890830702,
+  "mean_entropy_ppl": 3.2658834401518106,
+  "unigram_entropy_bits": 10.16901935371797,
+  "trigram_repetition": 0.016585115770188515,
+  "avg_words": 33.505859375,
+  "std_words": 14.903333206626113,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 9.7
+}

@@ -1,0 +1,9 @@
+{
+    "check1": "FAIL: \u03c4 has zero per-token variation",
+    "check2": "PASS",
+    "check3": "PASS",
+    "check4": "PASS",
+    "check5": "PASS",
+    "check6": "PASS",
+    "check7": "PASS"
+}

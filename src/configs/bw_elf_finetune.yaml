@@ -1,0 +1,45 @@
+# BW-ELF Fine-Tuning Configuration
+
+# Start from ELF-B base checkpoint (assuming downloaded in Phase 1 or via HF)
+resume: "embedded-language-flows/ELF-B-owt-torch"
+model: "ELF-B"
+
+# Use OpenWebText dataset
+data_path: "openwebtext"  # or specific path if downloaded locally
+
+# Fine-tuning hyperparameters (1/10th of original lr)
+epochs: 1
+lr: 5e-6
+min_lr: 0.0
+lr_schedule: "constant"
+warmup_steps: 1000
+
+# Batch size settings
+global_batch_size: 512
+batch_size: 64  # per-device batch size, adjust based on GPU VRAM
+grad_accum_steps: 8  # 512 / 64 = 8
+
+# Basin-Widening Loss Weights
+lambda_intermediate_ce: 0.0
+lambda_robust: 0.03
+lambda_margin: 0.0
+
+# Basin-Widening Hyperparameters
+sigma_dec_max: 0.1
+sigma_dec_gamma: 2.0
+margin_max: 5.0
+margin_gamma: 2.0
+
+# Base ELF configs
+denoiser_noise_scale: 2.0
+decoder_noise_scale: 1.0
+t_eps: 0.05
+self_cond_prob: 0.5
+num_self_cond_cfg_tokens: 4
+
+# Logging and evaluation
+log_freq: 50
+eval_freq: 100
+save_freq: 5000  # Save checkpoint every 5K steps
+output_dir: "./phase3_basin/results/finetune"
+use_wandb: false

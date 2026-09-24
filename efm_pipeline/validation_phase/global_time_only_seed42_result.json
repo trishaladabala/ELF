@@ -1,0 +1,12 @@
+{
+    "num_samples": 512,
+    "avg_length_words": 37.078125,
+    "gen_ppl": 1069.347334545382,
+    "mean_entropy_ppl": 3.2705285908887163,
+    "unigram_entropy_bits": 9.85737281703797,
+    "trigram_repetition": 0.02426278777600046,
+    "avg_words": 37.078125,
+    "std_words": 11.072459764405332,
+    "empty_fraction": 0.001953125,
+    "eval_time_seconds": 10.3
+}

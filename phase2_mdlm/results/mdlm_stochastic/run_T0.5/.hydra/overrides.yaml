@@ -1,0 +1,11 @@
+- mode=sample_eval
+- eval.checkpoint_path=kuleshov-group/mdlm-owt
+- data=openwebtext-split
+- model.length=1024
+- sampling.predictor=ddpm_cache
+- sampling.steps=1000
+- loader.eval_batch_size=4
+- sampling.num_sample_batches=128
+- backbone=hf_dit
+- +wandb.offline=true
+- +sampling.temperature=0.5

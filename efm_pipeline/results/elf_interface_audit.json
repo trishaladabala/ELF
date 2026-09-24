@@ -1,0 +1,298 @@
+{
+  "architecture": {
+    "class": "ELF",
+    "text_encoder_dim": 512,
+    "hidden_size": 768,
+    "depth": 12,
+    "num_heads": 12,
+    "max_length": 64,
+    "bottleneck_dim": 128,
+    "vocab_size": 32128,
+    "num_time_tokens": 4,
+    "num_self_cond_cfg_tokens": 4,
+    "num_model_mode_tokens": 4,
+    "components": {
+      "t_emb_tokens": {
+        "num_params": 3072
+      },
+      "self_cond_cfg_tokens": {
+        "num_params": 3072
+      },
+      "mode_tokens": {
+        "num_params": 3072
+      },
+      "proj_kernel": {
+        "num_params": 393216
+      },
+      "proj_bias": {
+        "num_params": 512
+      },
+      "unembed_kernel": {
+        "num_params": 16449536
+      },
+      "unembed_bias": {
+        "num_params": 32128
+      },
+      "self_cond_proj": {
+        "num_params": 524800
+      },
+      "text_proj": {
+        "num_params": 164608
+      },
+      "t_embedder": {
+        "num_params": 787968
+      },
+      "self_cond_cfg_embedder": {
+        "num_params": 787968
+      },
+      "blocks": {
+        "num_params": 85049856
+      },
+      "final_layer": {
+        "num_params": 394496
+      }
+    },
+    "total_params": 104594304,
+    "key_shapes": {
+      "text_proj.proj1.weight": [
+        128,
+        512
+      ],
+      "text_proj.proj2.weight": [
+        768,
+        128
+      ],
+      "self_cond_proj.weight": [
+        512,
+        1024
+      ],
+      "t_emb_tokens": [
+        1,
+        4,
+        768
+      ],
+      "final_layer.linear.weight": [
+        512,
+        768
+      ],
+      "proj_kernel": [
+        768,
+        512
+      ],
+      "unembed_kernel": [
+        512,
+        32128
+      ]
+    }
+  },
+  "forward_pass": {
+    "input": {
+      "x_shape": [
+        2,
+        64,
+        512
+      ],
+      "t_shape": [
+        2
+      ],
+      "x_dtype": "torch.float32",
+      "note": "x is T5 encoder output (or noised latent), t is scalar per sample"
+    },
+    "after_bottleneck": {
+      "shape": [
+        2,
+        64,
+        768
+      ],
+      "note": "text_encoder_dim (512) \u2192 bottleneck_dim (128) \u2192 hidden_size (768)"
+    },
+    "self_cond_projection": {
+      "input_shape": [
+        2,
+        64,
+        1024
+      ],
+      "output_shape": [
+        2,
+        64,
+        512
+      ],
+      "note": "2*text_encoder_dim (1024) \u2192 text_encoder_dim (512)"
+    },
+    "time_embedding": {
+      "t_shape": [
+        2
+      ],
+      "emb_shape": [
+        2,
+        768
+      ],
+      "t_emb_tokens_shape": [
+        1,
+        4,
+        768
+      ],
+      "note": "Scalar t \u2192 sinusoidal (256d) \u2192 MLP \u2192 768d"
+    },
+    "flow_output": {
+      "shape": [
+        2,
+        64,
+        512
+      ],
+      "decoder_logits": "None (decoder_step_active=None)",
+      "note": "Output shape matches input: (B, S, text_encoder_dim=512)"
+    },
+    "decoder_output": {
+      "flow_shape": [
+        2,
+        64,
+        512
+      ],
+      "logits_shape": [
+        2,
+        64,
+        32128
+      ],
+      "note": "Logits: (B, S, vocab_size=32128)"
+    },
+    "decoder_path": {
+      "proj_kernel_shape": [
+        768,
+        512
+      ],
+      "unembed_kernel_shape": [
+        512,
+        32128
+      ],
+      "note": "hidden(768) \u2192 GeLU(proj \u2192 512) \u2192 unembed \u2192 vocab(32128)"
+    },
+    "with_self_cond": {
+      "input_shape": [
+        2,
+        64,
+        1024
+      ],
+      "output_shape": [
+        2,
+        64,
+        512
+      ],
+      "note": "When x is 2\u00d7C, self_cond_proj projects it to C first"
+    },
+    "with_attention_mask": {
+      "mask_shape": [
+        2,
+        64
+      ],
+      "output_shape": [
+        2,
+        64,
+        512
+      ],
+      "note": "attention_mask: 1=valid, 0=padded. Same shape as output."
+    }
+  },
+  "sampling": {
+    "time_schedule": {
+      "num_steps": 32,
+      "t_steps_shape": [
+        33
+      ],
+      "t_range": [
+        0.0,
+        1.0
+      ],
+      "first_5": [
+        0.0,
+        0.1263,
+        0.1319,
+        0.1352,
+        0.1397
+      ]
+    },
+    "add_noise": {
+      "x0_shape": [
+        2,
+        64,
+        512
+      ],
+      "noise_shape": [
+        2,
+        64,
+        512
+      ],
+      "t_shape": [
+        2
+      ],
+      "z_shape": [
+        2,
+        64,
+        512
+      ],
+      "formula": "z = t*x0 + (1-t)*noise*noise_scale"
+    },
+    "net_out_to_v_x": {
+      "net_out_shape": [
+        2,
+        64,
+        512
+      ],
+      "v_shape": [
+        2,
+        64,
+        512
+      ],
+      "x_pred_shape": [
+        2,
+        64,
+        512
+      ],
+      "note": "v = (x_pred - z) / (1 - t); x_pred = net_out"
+    },
+    "ode_step_signature": {
+      "args": "model, z, t, t_next, x_pred_prev, config, cfg_scale, self_cond_cfg_scale, cond_seq, cond_seq_mask",
+      "returns": "(z_next, x_pred)",
+      "z_shape": "(B, S, 512)",
+      "t_type": "float scalar"
+    },
+    "sde_step_signature": {
+      "args": "model, z, t, t_next, x_pred_prev, config, cfg_scale, self_cond_cfg_scale, cond_seq, cond_seq_mask, gamma, generator",
+      "returns": "(z_next, x_pred)",
+      "extra": "gamma controls noise level; generator for reproducibility"
+    }
+  },
+  "training": {
+    "flow_matching_loss": {
+      "prediction_shape": [
+        2,
+        64,
+        512
+      ],
+      "target_shape": [
+        2,
+        64,
+        512
+      ],
+      "loss_type": "MSE (L2) between predicted x0 and ground truth x0",
+      "loss_value": 1.0073540210723877
+    },
+    "decode_loss": {
+      "logits_shape": [
+        2,
+        64,
+        32128
+      ],
+      "targets_shape": [
+        2,
+        64
+      ],
+      "loss_type": "Cross-entropy (flat vocab)",
+      "loss_value": 10.41144847869873
+    },
+    "combined_objective": {
+      "formula": "loss = flow_loss_weight * L2(flow_pred, x0) + decode_loss_weight * CE(logits, tokens)",
+      "note": "ELF uses decoder_prob to stochastically select CE vs L2 branch per sample."
+    }
+  }
+}

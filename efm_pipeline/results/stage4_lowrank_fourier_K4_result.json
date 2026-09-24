@@ -1,0 +1,15 @@
+{
+  "experiment": "stage4_lowrank_fourier_K4",
+  "timestamp": "2026-09-18T14:52:57.361459",
+  "elapsed_seconds": 3.1,
+  "num_samples": 256,
+  "avg_length_words": 49.15625,
+  "gen_ppl": 1936.2153625100648,
+  "mean_entropy_ppl": 3.373414463829249,
+  "unigram_entropy_bits": 9.14702630441096,
+  "trigram_repetition": 0.004811465974952486,
+  "avg_words": 49.15625,
+  "std_words": 11.561275272974862,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 3.1
+}

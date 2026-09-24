@@ -1,0 +1,11 @@
+/home/snu/miniconda3/envs/mdlm/lib/python3.9/site-packages/lightning/fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Traceback (most recent call last):
+  File "/home/snu/trishal_sanjay_proj/ELF/phase2_mdlm/mdlm/main.py", line 12, in <module>
+    import diffusion
+  File "/home/snu/trishal_sanjay_proj/ELF/phase2_mdlm/mdlm/diffusion.py", line 17, in <module>
+    import models
+  File "/home/snu/trishal_sanjay_proj/ELF/phase2_mdlm/mdlm/models/__init__.py", line 2, in <module>
+    from . import dimamba
+  File "/home/snu/trishal_sanjay_proj/ELF/phase2_mdlm/mdlm/models/dimamba.py", line 11, in <module>
+    from causal_conv1d import (
+ModuleNotFoundError: No module named 'causal_conv1d'

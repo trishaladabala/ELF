@@ -1,0 +1,16 @@
+{
+  "experiment": "stage0_elf_baseline",
+  "timestamp": "2026-09-18T13:56:58.494225",
+  "elapsed_seconds": 221.1,
+  "method": "ode",
+  "num_steps": 32,
+  "sde_gamma": null,
+  "num_samples": 512,
+  "max_length": 1024,
+  "gen_ppl": 18.26183920236762,
+  "mean_entropy": 4.677612330764532,
+  "seed": 42,
+  "checkpoint": "embedded-language-flows/ELF-B-owt-torch",
+  "gen_ppl_model": "gpt2-large",
+  "device": "cuda"
+}

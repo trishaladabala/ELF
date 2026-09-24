@@ -1,0 +1,15 @@
+{
+  "experiment": "learned_quantized_K2_s2024",
+  "timestamp": "2026-09-22T14:59:18.124686",
+  "elapsed_seconds": 3.4,
+  "num_samples": 512,
+  "avg_length_words": 36.34765625,
+  "gen_ppl": 1056.4760646457385,
+  "mean_entropy_ppl": 3.3077918380731717,
+  "unigram_entropy_bits": 9.840750533360062,
+  "trigram_repetition": 0.0194248031346574,
+  "avg_words": 36.34765625,
+  "std_words": 12.611697601109691,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 3.4
+}

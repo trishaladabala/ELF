@@ -1,0 +1,15 @@
+{
+  "experiment": "stage4_lowrank_learned_K2",
+  "timestamp": "2026-09-18T14:57:50.310884",
+  "elapsed_seconds": 2.6,
+  "num_samples": 256,
+  "avg_length_words": 45.6484375,
+  "gen_ppl": 779.1528495391709,
+  "mean_entropy_ppl": 3.2158803420607,
+  "unigram_entropy_bits": 9.042062296757624,
+  "trigram_repetition": 0.01755898250924035,
+  "avg_words": 45.6484375,
+  "std_words": 10.447854028870893,
+  "empty_fraction": 0.0,
+  "eval_time_seconds": 2.6
+}

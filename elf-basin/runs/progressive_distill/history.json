@@ -1,0 +1,22 @@
+[
+  {
+    "stage": 1,
+    "teacher_steps": 64,
+    "student_steps": 32
+  },
+  {
+    "stage": 2,
+    "teacher_steps": 32,
+    "student_steps": 16
+  },
+  {
+    "stage": 3,
+    "teacher_steps": 16,
+    "student_steps": 8
+  },
+  {
+    "stage": 4,
+    "teacher_steps": 8,
+    "student_steps": 4
+  }
+]

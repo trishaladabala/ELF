@@ -243,6 +243,78 @@ def train_step(
     )
     l2_per_token = ((v_pred - v_final_target) ** 2).mean(dim=-1)
 
+    # ─── BW-ELF: Basin-Widening Losses (Denoiser Branch Only) ──────────────
+    lambda_intermediate_ce = getattr(config, "lambda_intermediate_ce", 0.0)
+    lambda_robust = getattr(config, "lambda_robust", 0.0)
+    lambda_margin = getattr(config, "lambda_margin", 0.0)
+    bw_active = (lambda_intermediate_ce > 0 or lambda_robust > 0 or lambda_margin > 0)
+
+    intermediate_ce_per_token = torch.zeros_like(l2_per_token)
+    robust_ce_per_token = torch.zeros_like(l2_per_token)
+    margin_loss_per_token = torch.zeros_like(l2_per_token)
+
+    if bw_active:
+        def decode_z(z_states):
+            # Pass z_states (B, L, text_encoder_dim) through the factored decoder
+            # The model's decoder expects input of dim hidden_size, but x_pred is text_encoder_dim
+            # WAIT: to get the decoder logits, we must use model's forward with decoder_step_active=True
+            batch_size = z_states.shape[0]
+            t_final = torch.ones((batch_size,), dtype=denoiser_t.dtype, device=denoiser_t.device)
+            # Match the training self-conditioning setup
+            if getattr(config, "self_cond_prob", 0) > 0:
+                sc_half_zeros = torch.zeros_like(z_states)
+                z_input = torch.cat([z_states, sc_half_zeros], dim=-1)
+            else:
+                z_input = z_states
+                
+            with torch.amp.autocast('cuda', dtype=torch.bfloat16, enabled=use_bf16):
+                # We need the unwrapped model if using DDP
+                m = getattr(model, "module", model)
+                _, logits = m(
+                    z_input, t_final, deterministic=True,
+                    self_cond_cfg_scale=None,
+                    decoder_step_active=torch.ones_like(t_final)
+                )
+            return logits
+
+        # Decode the clean prediction
+        clean_logits = decode_z(x_pred)
+        
+        if lambda_intermediate_ce > 0 or lambda_margin > 0:
+            log_probs_clean = F.log_softmax(clean_logits.to(torch.float32), dim=-1)
+            # Note: decoder_targets are target tokens (B, L)
+            intermediate_ce_per_token = -log_probs_clean.gather(-1, decoder_targets.unsqueeze(-1)).squeeze(-1)
+            
+        if lambda_robust > 0:
+            sigma_max = getattr(config, "sigma_dec_max", 0.1)
+            sigma_gamma = getattr(config, "sigma_dec_gamma", 2.0)
+            # t is in [0, 1]. Apply noise schedule.
+            sigma = sigma_max * (denoiser_t.view(-1, 1, 1) ** sigma_gamma)
+            
+            x_pert = x_pred + sigma * torch.randn_like(x_pred)
+            pert_logits = decode_z(x_pert)
+            log_probs_pert = F.log_softmax(pert_logits.to(torch.float32), dim=-1)
+            robust_ce_per_token = -log_probs_pert.gather(-1, decoder_targets.unsqueeze(-1)).squeeze(-1)
+
+        if lambda_margin > 0:
+            margin_max = getattr(config, "margin_max", 5.0)
+            margin_gamma = getattr(config, "margin_gamma", 2.0)
+            target_margin = margin_max * (denoiser_t.view(-1, 1) ** margin_gamma)
+            
+            # logit_correct - max_logit_other
+            correct_logits = clean_logits.gather(-1, decoder_targets.unsqueeze(-1)).squeeze(-1)
+            vocab_size = clean_logits.shape[-1]
+            one_hot_targets = F.one_hot(decoder_targets, num_classes=vocab_size).to(clean_logits.dtype)
+            # Mask out the correct token to find the max of the remaining
+            masked_logits = clean_logits - 1e9 * one_hot_targets
+            max_other_logits, _ = masked_logits.max(dim=-1)
+            
+            current_margin = correct_logits - max_other_logits
+            # Penalize if current margin is less than target margin
+            margin_loss_per_token = F.relu(target_margin - current_margin)
+
+    # ────────────────────────────────────────────────────────────────────────
+
     # Masks: each position is "alive" for exactly one branch.
     loss_mask_f = loss_mask.to(ce_per_token.dtype)
     ce_mask = loss_mask_f * decoder_mask_B1
@@ -251,6 +323,13 @@ def train_step(
     # Combined loss with a single denominator. In expectation this is
     # decoder_prob * mean_CE + (1 - decoder_prob) * mean_L2.
     total_sum = (ce_per_token * ce_mask).sum() + (l2_per_token * l2_mask).sum()
+    
+    # Add BW-ELF losses (masked by l2_mask since they apply to denoiser rows)
+    if bw_active:
+        total_sum += lambda_intermediate_ce * (intermediate_ce_per_token * l2_mask).sum()
+        total_sum += lambda_robust * (robust_ce_per_token * l2_mask).sum()
+        total_sum += lambda_margin * (margin_loss_per_token * l2_mask).sum()
+
     loss = total_sum / torch.clamp(loss_mask_f.sum(), min=1.0)
 
     # Per-branch metrics: mean per-token within each branch.
