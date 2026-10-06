@@ -1,0 +1,7 @@
+{
+  "experiment": "base_learned_quantized_K8",
+  "timestamp": "2026-09-25T16:24:46.689420",
+  "elapsed_seconds": 1131.7,
+  "final_step": 10000,
+  "final_loss": 0.6192564368247986
+}

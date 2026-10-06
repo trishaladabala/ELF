@@ -46,11 +46,22 @@ def generate_synthetic_samples(
         z = torch.randn(bs, seq_len, embed_dim, device=device, generator=generator)
         
         # Local time logic
-        if local_time_mode == "expansion":
-            # Oracle / true timing
+        if local_time_mode in ("expansion", "continuous", "lowrank"):
+            # Oracle / true timing — models trained with any local-time mode
+            # (continuous, lowrank, quantized) were trained with oracle expansion
+            # timing, so generation must also use it.
             local_times = wave_template.unsqueeze(0).expand(bs, -1).float() / max(W - 1, 1)
+        elif local_time_mode == "shuffled":
+            # True timing distribution, but randomly permuted across the sequence
+            base_times = wave_template.unsqueeze(0).expand(bs, -1).float() / max(W - 1, 1)
+            # Shuffle for each item in batch
+            local_times = torch.stack([base_times[i, torch.randperm(seq_len)] for i in range(bs)])
         elif local_time_mode == "none":
             local_times = None
+        elif local_time_mode.startswith("quantized"):
+            # Quantized modes also use oracle timing — the quantization
+            # happens inside the LocalTimeConditioner, not here.
+            local_times = wave_template.unsqueeze(0).expand(bs, -1).float() / max(W - 1, 1)
         else:
             # Fallback (e.g. constant 0)
             local_times = torch.zeros(bs, seq_len, device=device)

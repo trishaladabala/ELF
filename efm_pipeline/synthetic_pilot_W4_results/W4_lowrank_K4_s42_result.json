@@ -1,7 +1,7 @@
 {
   "experiment": "W4_lowrank_K4_s42",
-  "timestamp": "2026-09-24T14:29:39.301893",
-  "elapsed_seconds": 243.4,
+  "timestamp": "2026-09-24T15:01:57.351684",
+  "elapsed_seconds": 244.3,
   "final_step": 5000,
-  "final_loss": 2.772209405899048
+  "final_loss": 2.772278308868408
 }

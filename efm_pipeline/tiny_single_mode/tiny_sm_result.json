@@ -1,0 +1,7 @@
+{
+  "experiment": "tiny_sm",
+  "timestamp": "2026-09-24T15:38:44.117342",
+  "elapsed_seconds": 63.6,
+  "final_step": 1000,
+  "final_loss": 0.3145029842853546
+}

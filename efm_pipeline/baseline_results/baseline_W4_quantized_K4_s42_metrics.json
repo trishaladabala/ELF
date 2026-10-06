@@ -1,0 +1,18 @@
+{
+    "experiment": "baseline_W4_quantized_K4_s42",
+    "W": 4,
+    "mode": "quantized",
+    "K": 4,
+    "steps": 50000,
+    "tf_nll": 0.49543437361717224,
+    "tf_acc": 0.9961719512939453,
+    "wave_1_acc": 0.0045129748025573525,
+    "wave_2_acc": 0.00521901211556384,
+    "wave_3_acc": 0.0043257476020312205,
+    "overall_dep_acc": 0.0046875,
+    "wave_1_internal_acc": 0.2532907107935314,
+    "wave_2_internal_acc": 0.25144454799627214,
+    "wave_3_internal_acc": 0.24619146135038555,
+    "overall_internal_dep_acc": 0.2503125,
+    "overall_exact_match": 0.004343749955296516
+}

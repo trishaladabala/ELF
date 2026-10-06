@@ -1,0 +1,7 @@
+{
+  "experiment": "tiny_W4_20k",
+  "timestamp": "2026-09-24T15:46:21.338263",
+  "elapsed_seconds": 728.4,
+  "final_step": 20000,
+  "final_loss": 0.39192435145378113
+}

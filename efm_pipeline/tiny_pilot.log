@@ -1,0 +1,62 @@
+/home/snu/trishal_sanjay_proj/ELF/venv/lib/python3.12/site-packages/torch/autograd/graph.py:825: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at ../aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+Training EFM_Tiny Continuous W=4...
+
+============================================================
+  Training: tiny_W4
+  Device: NVIDIA RTX A4000 (16.7 GB)
+  Parameters: 845,333
+  Steps: 5000, Batch: 64, LR: 0.0001
+  AMP: True, Grad norm: 1.0
+  Local-time training: expansion
+  Expansion fraction: 0.5
+============================================================
+
+[tiny_W4] | step=1 | loss=3.87 | loss_flow=1 | loss_decode=5.678 | loss_insert=0.3133 | acc=0.003193 | cos_sim=0 | z_norm=0.7735 | lr=2e-07 | gpu_mb=127.2 | (0s)
+  Checkpoint saved → tiny_pilot_W4/ckpt/tiny_W4/checkpoint_1000.pt
+  Checkpoint saved → tiny_pilot_W4/ckpt/tiny_W4/checkpoint_2000.pt
+  Checkpoint saved → tiny_pilot_W4/ckpt/tiny_W4/checkpoint_3000.pt
+  Checkpoint saved → tiny_pilot_W4/ckpt/tiny_W4/checkpoint_4000.pt
+  Checkpoint saved → tiny_pilot_W4/ckpt/tiny_W4/checkpoint_5000.pt
+[tiny_W4] Result saved → tiny_pilot_W4/tiny_W4_result.json
+
+Training complete: 5000 steps in 171s
+
+Evaluating EFM_Tiny Continuous W=4...
+Sampling (expansion):   0%|          | 0/16 [00:00<?, ?it/s]Sampling (expansion):  12%|█▎        | 2/16 [00:00<00:01, 11.10it/s]Sampling (expansion):  25%|██▌       | 4/16 [00:00<00:01, 11.26it/s]Sampling (expansion):  38%|███▊      | 6/16 [00:00<00:00, 11.03it/s]Sampling (expansion):  50%|█████     | 8/16 [00:00<00:00, 10.99it/s]Sampling (expansion):  62%|██████▎   | 10/16 [00:00<00:00, 10.79it/s]Sampling (expansion):  75%|███████▌  | 12/16 [00:01<00:00, 10.89it/s]Sampling (expansion):  88%|████████▊ | 14/16 [00:01<00:00, 10.81it/s]Sampling (expansion): 100%|██████████| 16/16 [00:01<00:00, 11.45it/s]Sampling (expansion): 100%|██████████| 16/16 [00:01<00:00, 11.14it/s]
+Results for W=4:
+  Teacher-Forced NLL: 0.0541
+  Teacher-Forced Exact Match: 0.9961
+  Dependency Accuracy: 0.0037
+  Generated Exact Match: 0.0038
+
+Training EFM_Tiny Continuous W=16...
+
+============================================================
+  Training: tiny_W16
+  Device: NVIDIA RTX A4000 (16.7 GB)
+  Parameters: 845,333
+  Steps: 5000, Batch: 64, LR: 0.0001
+  AMP: True, Grad norm: 1.0
+  Local-time training: expansion
+  Expansion fraction: 0.5
+============================================================
+
+[tiny_W16] | step=1 | loss=3.871 | loss_flow=1.001 | loss_decode=5.678 | loss_insert=0.3133 | acc=0.002941 | cos_sim=0 | z_norm=0.7734 | lr=2e-07 | gpu_mb=127.2 | (0s)
+  Checkpoint saved → tiny_pilot_W16/ckpt/tiny_W16/checkpoint_1000.pt
+  Checkpoint saved → tiny_pilot_W16/ckpt/tiny_W16/checkpoint_2000.pt
+  Checkpoint saved → tiny_pilot_W16/ckpt/tiny_W16/checkpoint_3000.pt
+  Checkpoint saved → tiny_pilot_W16/ckpt/tiny_W16/checkpoint_4000.pt
+  Checkpoint saved → tiny_pilot_W16/ckpt/tiny_W16/checkpoint_5000.pt
+[tiny_W16] Result saved → tiny_pilot_W16/tiny_W16_result.json
+
+Training complete: 5000 steps in 178s
+
+Evaluating EFM_Tiny Continuous W=16...
+Sampling (expansion):   0%|          | 0/16 [00:00<?, ?it/s]Sampling (expansion):  12%|█▎        | 2/16 [00:00<00:01, 11.05it/s]Sampling (expansion):  25%|██▌       | 4/16 [00:00<00:01, 11.03it/s]Sampling (expansion):  38%|███▊      | 6/16 [00:00<00:00, 11.04it/s]Sampling (expansion):  50%|█████     | 8/16 [00:00<00:00, 11.03it/s]Sampling (expansion):  62%|██████▎   | 10/16 [00:00<00:00, 10.90it/s]Sampling (expansion):  75%|███████▌  | 12/16 [00:01<00:00, 10.93it/s]Sampling (expansion):  88%|████████▊ | 14/16 [00:01<00:00, 10.97it/s]Sampling (expansion): 100%|██████████| 16/16 [00:01<00:00, 11.61it/s]Sampling (expansion): 100%|██████████| 16/16 [00:01<00:00, 11.22it/s]
+Results for W=16:
+  Teacher-Forced NLL: 0.0591
+  Teacher-Forced Exact Match: 0.9963
+  Dependency Accuracy: 0.0045
+  Generated Exact Match: 0.0037

@@ -1,0 +1,110 @@
+{
+    "global_time_only": {
+        "pilot": {
+            "step": 5000,
+            "final_loss": 2.7723488807678223,
+            "params_total": 20160765,
+            "params_trainable": 20160765,
+            "tf_nll": 5.546589374542236,
+            "tf_acc": 0.0043281251564621925,
+            "wave_1_acc": 0.0034103827207275484,
+            "wave_2_acc": 0.0025906735751295338,
+            "wave_3_acc": 0.0052651372696502444,
+            "overall_dep_acc": 0.00375,
+            "wave_1_internal_acc": 0.6396362258431224,
+            "wave_2_internal_acc": 0.4067357512953368,
+            "wave_3_internal_acc": 0.8345242572395637,
+            "overall_internal_dep_acc": 0.62575,
+            "overall_exact_match": 0.0037499999161809683
+        },
+        "baseline": {
+            "step": 50000,
+            "final_loss": 0.0001563888363307342,
+            "params_total": 20160765,
+            "params_trainable": 20160765,
+            "tf_nll": 0.8808412551879883,
+            "tf_acc": 0.9961719512939453,
+            "wave_1_acc": 0.005305039787798408,
+            "wave_2_acc": 0.0044411547002220575,
+            "wave_3_acc": 0.003008649868371568,
+            "overall_dep_acc": 0.00425,
+            "wave_1_internal_acc": 0.004547176960970065,
+            "wave_2_internal_acc": 0.0055514433752775726,
+            "wave_3_internal_acc": 0.004136893569010906,
+            "overall_internal_dep_acc": 0.00475,
+            "overall_exact_match": 0.004093749914318323
+        }
+    },
+    "continuous": {
+        "pilot": {
+            "step": 5000,
+            "final_loss": 2.7725086212158203,
+            "params_total": 20555005,
+            "params_trainable": 20555005,
+            "tf_nll": 5.543735027313232,
+            "tf_acc": 0.005781250074505806,
+            "wave_1_acc": 0.0037893141341417205,
+            "wave_2_acc": 0.003700962250185048,
+            "wave_3_acc": 0.004136893569010906,
+            "overall_dep_acc": 0.003875,
+            "wave_1_internal_acc": 1.0,
+            "wave_2_internal_acc": 1.0,
+            "wave_3_internal_acc": 1.0,
+            "overall_internal_dep_acc": 1.0,
+            "overall_exact_match": 0.0044999998062849045
+        },
+        "baseline": {
+            "step": 50000,
+            "final_loss": 0.12398850917816162,
+            "params_total": 20555005,
+            "params_trainable": 20555005,
+            "tf_nll": 1.0362217426300049,
+            "tf_acc": 0.9961719512939453,
+            "wave_1_acc": 0.004547176960970065,
+            "wave_2_acc": 0.0025906735751295338,
+            "wave_3_acc": 0.003384731101918014,
+            "overall_dep_acc": 0.0035,
+            "wave_1_internal_acc": 0.5577870405456612,
+            "wave_2_internal_acc": 0.43005181347150256,
+            "wave_3_internal_acc": 0.550582925911997,
+            "overall_internal_dep_acc": 0.51225,
+            "overall_exact_match": 0.00390625
+        }
+    },
+    "lowrank_K4": {
+        "pilot": {
+            "step": 5000,
+            "final_loss": 2.772278308868408,
+            "params_total": 20163425,
+            "params_trainable": 20163425,
+            "tf_nll": 5.546351432800293,
+            "tf_acc": 0.003031250089406967,
+            "wave_1_acc": 0.0034103827207275484,
+            "wave_2_acc": 0.0029607698001480384,
+            "wave_3_acc": 0.0045129748025573525,
+            "overall_dep_acc": 0.003625,
+            "wave_1_internal_acc": 0.42061386888973096,
+            "wave_2_internal_acc": 0.6539600296076981,
+            "wave_3_internal_acc": 0.9341857841293719,
+            "overall_internal_dep_acc": 0.670125,
+            "overall_exact_match": 0.003937500063329935
+        },
+        "baseline": {
+            "step": 50000,
+            "final_loss": 0.08795027434825897,
+            "params_total": 20163425,
+            "params_trainable": 20163425,
+            "tf_nll": 1.370918869972229,
+            "tf_acc": 0.9961719512939453,
+            "wave_1_acc": 0.005305039787798408,
+            "wave_2_acc": 0.0029607698001480384,
+            "wave_3_acc": 0.0045129748025573525,
+            "overall_dep_acc": 0.00425,
+            "wave_1_internal_acc": 0.14172034861690033,
+            "wave_2_internal_acc": 0.36380458919319025,
+            "wave_3_internal_acc": 0.22264009025949605,
+            "overall_internal_dep_acc": 0.243625,
+            "overall_exact_match": 0.004218750167638063
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "experiment": "baseline_W4_lowrank_K4_s42",
+    "W": 4,
+    "mode": "lowrank",
+    "K": 4,
+    "steps": 50000,
+    "tf_nll": 1.370918869972229,
+    "tf_acc": 0.9961719512939453,
+    "wave_1_acc": 0.0052651372696502444,
+    "wave_2_acc": 0.0033550792171481826,
+    "wave_3_acc": 0.003573443671243182,
+    "overall_dep_acc": 0.0040625,
+    "wave_1_internal_acc": 0.1453553967657014,
+    "wave_2_internal_acc": 0.3699906803355079,
+    "wave_3_internal_acc": 0.23434267444047396,
+    "overall_internal_dep_acc": 0.25025,
+    "overall_exact_match": 0.004265625029802322
+}

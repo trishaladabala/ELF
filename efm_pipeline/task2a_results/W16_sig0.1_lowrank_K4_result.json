@@ -1,0 +1,7 @@
+{
+  "experiment": "W16_sig0.1_lowrank_K4",
+  "timestamp": "2026-09-29T14:19:56.378254",
+  "elapsed_seconds": 104.3,
+  "final_step": 5000,
+  "final_loss": 0.5627501010894775
+}

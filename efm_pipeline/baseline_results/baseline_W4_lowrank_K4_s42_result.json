@@ -1,0 +1,7 @@
+{
+  "experiment": "baseline_W4_lowrank_K4_s42",
+  "timestamp": "2026-10-01T17:00:56.377245",
+  "elapsed_seconds": 2392.4,
+  "final_step": 50000,
+  "final_loss": 0.08795027434825897
+}

@@ -1,0 +1,18 @@
+{
+    "experiment": "baseline_W4_continuous_s42",
+    "W": 4,
+    "mode": "continuous",
+    "K": 0,
+    "steps": 50000,
+    "tf_nll": 1.0362217426300049,
+    "tf_acc": 0.9961719512939453,
+    "wave_1_acc": 0.005077096652877021,
+    "wave_2_acc": 0.0027958993476234857,
+    "wave_3_acc": 0.0043257476020312205,
+    "overall_dep_acc": 0.0040625,
+    "wave_1_internal_acc": 0.5575404287326062,
+    "wave_2_internal_acc": 0.4296365330848089,
+    "wave_3_internal_acc": 0.5465488057175099,
+    "overall_internal_dep_acc": 0.511,
+    "overall_exact_match": 0.004000000189989805
+}

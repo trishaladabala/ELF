@@ -348,3 +348,14 @@ EFM_models = {
     "EFM-Small": EFM_Small,
     "EFM-Base": EFM_Base,
 }
+
+def EFM_Tiny(**kwargs):
+    """A tiny 2-layer model for rapid synthetic testing (approx 2M params)."""
+    return EFMModel(
+        depth=2,
+        hidden_size=128,
+        num_heads=4,
+        gradient_checkpointing=False,
+        **kwargs
+    )
+EFM_models["tiny"] = EFM_Tiny

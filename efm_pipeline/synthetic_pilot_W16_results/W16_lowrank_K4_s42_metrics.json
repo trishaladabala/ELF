@@ -1,0 +1,19 @@
+{
+    "wave_1_acc": 1.0,
+    "wave_2_acc": 1.0,
+    "wave_3_acc": 1.0,
+    "wave_4_acc": 0.9965635738831615,
+    "wave_5_acc": 1.0,
+    "wave_6_acc": 1.0,
+    "wave_7_acc": 0.9962406015037594,
+    "wave_8_acc": 1.0,
+    "wave_9_acc": 1.0,
+    "wave_10_acc": 1.0,
+    "wave_11_acc": 1.0,
+    "wave_12_acc": 1.0,
+    "wave_13_acc": 1.0,
+    "wave_14_acc": 0.9961538461538462,
+    "wave_15_acc": 1.0,
+    "overall_dep_acc": 0.99925,
+    "overall_exact_match": 0.003718750085681677
+}

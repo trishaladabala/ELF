@@ -1,11 +1,7 @@
 {
-    "wave_1_acc": 0.0,
-    "wave_2_acc": 0.0,
-    "wave_3_acc": 0.0,
-    "overall_dep_acc": 0.0,
-    "wave_0_exact_match": 0.004562499932944775,
-    "wave_1_exact_match": 0.004124999977648258,
-    "wave_2_exact_match": 0.0037499999161809683,
-    "wave_3_exact_match": 0.004062499850988388,
-    "overall_exact_match": 0.004124999977648258
+    "wave_1_acc": 0.6502444528018052,
+    "wave_2_acc": 0.8275862068965517,
+    "wave_3_acc": 0.9347376340041377,
+    "overall_dep_acc": 0.80425,
+    "overall_exact_match": 0.00465625012293458
 }

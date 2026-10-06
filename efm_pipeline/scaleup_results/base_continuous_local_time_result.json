@@ -1,0 +1,7 @@
+{
+  "experiment": "base_continuous_local_time",
+  "timestamp": "2026-09-25T15:26:02.047306",
+  "elapsed_seconds": 38952.9,
+  "final_step": 200000,
+  "final_loss": 0.02590910904109478
+}

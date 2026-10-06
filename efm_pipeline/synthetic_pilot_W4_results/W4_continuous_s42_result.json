@@ -1,7 +1,7 @@
 {
   "experiment": "W4_continuous_s42",
-  "timestamp": "2026-09-24T14:25:16.341296",
-  "elapsed_seconds": 247.6,
+  "timestamp": "2026-09-24T14:57:33.688795",
+  "elapsed_seconds": 243.5,
   "final_step": 5000,
-  "final_loss": 2.7723793983459473
+  "final_loss": 2.7725086212158203
 }
