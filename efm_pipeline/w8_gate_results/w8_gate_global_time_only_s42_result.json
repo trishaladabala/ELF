@@ -1,0 +1,7 @@
+{
+  "experiment": "w8_gate_global_time_only_s42",
+  "timestamp": "2026-10-08T13:59:14.913189",
+  "elapsed_seconds": 1899.9,
+  "final_step": 50000,
+  "final_loss": 0.00020253879483789206
+}

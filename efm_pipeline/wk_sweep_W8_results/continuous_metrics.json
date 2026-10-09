@@ -1,0 +1,29 @@
+{
+  "experiment_name": "continuous",
+  "W": 8,
+  "K": 0,
+  "mode": "continuous",
+  "steps": 50000,
+  "seed": 42,
+  "timestamp": "2026-10-09T12:26:51.332985",
+  "model_params": 20555005,
+  "metrics": {
+    "wave_1_acc": 0.0017316017316017316,
+    "wave_2_acc": 0.000856898029134533,
+    "wave_3_acc": 0.005323868677905945,
+    "wave_4_acc": 0.004432624113475178,
+    "wave_5_acc": 0.0017436791630340018,
+    "wave_6_acc": 0.00782608695652174,
+    "wave_7_acc": 0.003552397868561279,
+    "overall_dep_acc": 0.003625,
+    "wave_1_internal_acc": 0.41818181818181815,
+    "wave_2_internal_acc": 0.37103684661525277,
+    "wave_3_internal_acc": 0.36379769299023956,
+    "wave_4_internal_acc": 0.3537234042553192,
+    "wave_5_internal_acc": 0.34612031386224934,
+    "wave_6_internal_acc": 0.2808695652173913,
+    "wave_7_internal_acc": 0.2211367673179396,
+    "overall_internal_dep_acc": 0.33675,
+    "overall_exact_match": 0.0035468749701976776
+  }
+}

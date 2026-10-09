@@ -1,0 +1,29 @@
+{
+  "experiment_name": "lowrank_K1",
+  "W": 8,
+  "K": 1,
+  "mode": "lowrank",
+  "steps": 50000,
+  "seed": 42,
+  "timestamp": "2026-10-09T13:07:02.058985",
+  "model_params": 20161802,
+  "metrics": {
+    "wave_1_acc": 0.003463203463203463,
+    "wave_2_acc": 0.005998286203941731,
+    "wave_3_acc": 0.00354924578527063,
+    "wave_4_acc": 0.0008865248226950354,
+    "wave_5_acc": 0.0052310374891020054,
+    "wave_6_acc": 0.0052173913043478265,
+    "wave_7_acc": 0.0017761989342806395,
+    "overall_dep_acc": 0.00375,
+    "wave_1_internal_acc": 0.961038961038961,
+    "wave_2_internal_acc": 0.9460154241645244,
+    "wave_3_internal_acc": 0.9538598047914818,
+    "wave_4_internal_acc": 0.9423758865248227,
+    "wave_5_internal_acc": 0.960767218831735,
+    "wave_6_internal_acc": 0.9521739130434783,
+    "wave_7_internal_acc": 0.9076376554174067,
+    "overall_internal_dep_acc": 0.946375,
+    "overall_exact_match": 0.0035156249068677425
+  }
+}

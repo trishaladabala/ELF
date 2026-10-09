@@ -1,0 +1,7 @@
+{
+  "experiment": "baseline_W16_quantized_K4_s42",
+  "timestamp": "2026-10-06T16:56:57.615122",
+  "elapsed_seconds": 2405.6,
+  "final_step": 50000,
+  "final_loss": 0.1432275027036667
+}
