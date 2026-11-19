@@ -72,6 +72,13 @@ class T5Encoder(nn.Module):
         was_training = self.model.training
         if deterministic:
             self.model.eval()
+        if isinstance(attention_mask, torch.Tensor) and attention_mask.ndim == 3:
+            from transformers.models.t5 import modeling_t5
+            if hasattr(modeling_t5, "create_bidirectional_mask"):
+                dtype = self.model.dtype
+                min_val = torch.finfo(torch.bfloat16).min if dtype in (torch.float32, torch.bfloat16) else torch.finfo(dtype).min
+                mask_bool = attention_mask[:, None, :, :].to(device=input_ids.device, dtype=torch.bool)
+                attention_mask = torch.where(mask_bool, torch.zeros((), dtype=dtype, device=input_ids.device), min_val)
         try:
             out = self.model(input_ids=input_ids, attention_mask=attention_mask)
         finally:
